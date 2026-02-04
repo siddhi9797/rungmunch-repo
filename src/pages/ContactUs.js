@@ -22,7 +22,7 @@ const handleSubmit = async (e) => {
   const contactData = { name, email, phone, message };
 
   try {
-    const res = await fetch("http://localhost:5000/api/auth/contact", {
+    const res = await fetch(`${process.env.REACT_APP_API_URL}/api/auth/contact`, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(contactData),
