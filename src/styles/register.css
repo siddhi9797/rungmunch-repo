@@ -1,0 +1,17 @@
+.register-page {
+  background-color: #0f0f14;
+  min-height: 100vh;
+  color: white;
+  padding-top: 140px;
+  text-align: center;
+  font-family: Arial, sans-serif;
+}
+
+.register-page h1 {
+  color: #a569ff;
+  margin-bottom: 10px;
+}
+
+.register-page p {
+  color: #cccccc;
+}

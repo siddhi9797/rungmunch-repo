@@ -1,0 +1,303 @@
+/* ================= EVENT DETAILS PAGE ================= */
+
+.event-details-page {
+  background-color: #ffffff;
+  min-height: 100vh;
+  padding-top: 110px;   
+  padding-bottom: 80px;
+  font-family: Arial, sans-serif;
+}
+
+
+.event-hero {
+  height: 70vh;
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  margin: 0 auto;        
+  padding: 30px;
+  border-radius: 18px;
+  max-width: 1300px;
+  overflow: hidden;
+}
+
+
+/* Dark overlay */
+.event-hero::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.45);
+}
+
+.hero-overlay {
+  position: absolute;
+  bottom: 40px;
+  left: 60px;
+  color: #ffffff;
+  z-index: 2;
+  max-width: 70%;
+}
+
+.hero-overlay h1 {
+  font-size: 42px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.hero-overlay p {
+  font-size: 16px;
+  opacity: 0.95;
+}
+
+/* ================= NAVIGATION ================= */
+
+.event-nav {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  padding: 20px;
+  background: #ffffff;
+  border-bottom: 1px solid #eee;
+  margin-top: 20px;
+}
+
+.event-nav a {
+  text-decoration: none;
+  font-weight: 600;
+  color: #2e1b40;
+  padding-bottom: 4px;
+}
+
+.event-nav a:hover {
+  border-bottom: 2px solid #2e1b40;
+}
+
+/* ================= SECTIONS ================= */
+
+.event-section {
+  max-width: 1300px;
+  margin: 80px auto;
+  padding: 0 40px;
+  scroll-margin-top: 130px;
+}
+
+.event-section h2 {
+  font-size: 28px;
+   text-align: center; 
+  color: #2e1b40;
+  margin-bottom: 20px;
+}
+
+
+/* ================= ABOUT ================= */
+
+.event-description {
+  font-size: 20px;
+  line-height: 1.9;
+  color: #333;
+  text-align: justify;
+  margin-bottom: 70px;   /* space after About section */
+}
+
+@media (max-width: 600px) {
+  .event-description {
+    font-size: 18px;  /* smaller on small screens */
+  }
+}
+
+/* ================= MUSIC TEAM ================= */
+
+.section-header {
+  display: flex;
+  justify-content: center; /* center title-wrapper */
+  align-items: center;
+  margin-bottom: 30px;
+  position: relative;       /* needed for absolute button */
+  flex-wrap: wrap;          /* prevent wrapping issues */
+}
+
+.title-wrapper {
+  text-align: center;
+  flex: 0 1 auto;           /* shrink/grow as needed */
+  min-width: 200px;         /* optional: prevent collapsing */
+}
+
+.section-header h2 {
+  font-size: 30px;
+  color: #2e1b40;
+  margin: 0;
+}
+
+.section-subtitle {
+  font-size: 20px;
+  color: #555;
+  margin: 5px 0 0 0;
+}
+
+/* Button stays on the right of the section */
+.section-header button {
+  position: absolute;       /* stays right without moving title */
+  right: 0;
+  top: 50%;                 /* vertically center relative to header */
+  transform: translateY(-50%);
+  background: #2e1b40;
+  color: #fff;
+  border: none;
+  padding: 8px 18px;
+  border-radius: 20px;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.section-header button:hover {
+  opacity: 0.9;
+}
+
+/* Responsive: stack everything on mobile */
+@media (max-width: 600px) {
+  .section-header {
+    flex-direction: column;
+    align-items: center;
+    position: static;       /* remove absolute positioning */
+    gap: 15px;
+  }
+
+  .section-header button {
+    position: static;
+    transform: none;
+    width: fit-content;
+  }
+
+  .title-wrapper {
+    width: 100%;
+  }
+}
+
+
+
+.team-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 40px;          /* applies both row and column gap */
+  margin-top: 45px;
+  padding: 0 10px;
+  align-items: stretch; /* ✅ makes cards same height and keeps gap */
+}
+
+
+
+
+.team-card {
+  background: #ffffff;
+  padding: 24px;
+  text-align: left;
+  border-radius: 14px;
+  border: 1px solid #ddd;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.12);
+  transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
+
+  display: flex;
+  flex-direction: column;
+  width: 90%;
+  height: 90%;          /* ✅ full height inside grid */
+}
+
+
+
+
+
+
+
+.team-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.12);
+  background-color: #f7f5ff;
+}
+
+.team-card img {
+  width: 220px;
+  height: 220px;
+  object-fit: cover;
+  border-radius: 50%;     
+  margin: 0 auto 16px;    
+  display: block;
+}
+
+
+.team-card h3 {
+  font-size: 22px;
+  color: #2e1b40;
+  margin-bottom: 12px;
+  text-align: center;
+}
+.team-card p {
+  font-size: 17px;
+  color: #555;
+  line-height: 1.8;
+  margin-bottom: 16px;
+  text-align: justify;
+
+  flex-grow: 1; /* ✅ fills remaining space so all cards look even */
+}
+
+
+
+
+
+
+
+.social-icons {
+  display: flex;
+  justify-content: center;
+  gap: 14px;
+  margin-top: 16px; /* spacing from text */
+}
+
+
+
+.social-icons a {
+  font-size: 13px;
+  color: #6a3dc9;
+  text-decoration: none;
+}
+
+.social-icons a:hover {
+  text-decoration: underline;
+}
+
+/* ================= RESPONSIVE ================= */
+
+@media (max-width: 900px) {
+  .team-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .hero-overlay {
+    left: 25px;
+    bottom: 25px;
+  }
+
+  .hero-overlay h1 {
+    font-size: 30px;
+  }
+
+  .event-section {
+    padding: 0 25px;
+  }
+}
+
+@media (max-width: 600px) {
+  .team-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .event-nav {
+    flex-wrap: wrap;
+    gap: 15px;
+  }
+
+  .hero-overlay {
+    max-width: 90%;
+  }
+}

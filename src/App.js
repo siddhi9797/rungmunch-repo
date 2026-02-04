@@ -1,24 +1,36 @@
-import logo from './logo.svg';
-import './App.css';
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import Header from "./components/Header";
+import Footer from "./components/Footer";
+import Home from "./pages/Home";
+import AboutUs from "./pages/AboutUs";
+import Events from "./pages/Events";
+import GetInvolved from "./pages/GetInvolved";
+import ContactUs from "./pages/ContactUs";
+import MusicCompetition from "./pages/MusicCompetition";
+import DanceCompetition from "./pages/DanceCompetition";
+import InstrumentCompetition from "./pages/InstrumentCompetition";
+import MyHistory from "./pages/MyHistory";
+import EventDetails1 from "./pages/EventDetails1";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <BrowserRouter>
+      <Header />
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/about" element={<AboutUs />} />
+        <Route path="/events" element={<Events />} />
+        <Route path="/get-involved" element={<GetInvolved />} />
+        <Route path="/contact" element={<ContactUs />} />
+        <Route path="/competition/music" element={<MusicCompetition />} />
+        <Route path="/competition/dance" element={<DanceCompetition />} />
+        <Route path="/competition/instrumental" element={<InstrumentCompetition />} />
+        <Route path="/my-history" element={<MyHistory />} />
+         <Route path="/events/:id" element={<EventDetails1 />} />
+
+      </Routes>
+      <Footer />
+    </BrowserRouter>
   );
 }
 

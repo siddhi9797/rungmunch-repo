@@ -1,0 +1,427 @@
+/* PAGE */
+.music-page {
+  background-color: #ffffff;
+  min-height: 100vh;
+  padding-top: 100px;
+  padding-bottom: 80px;
+  font-family: Arial, sans-serif;
+}
+
+/* HEADER */
+.music-banner {
+  text-align: center;
+  background-color: #3c5671;
+  padding: 80px 0 50px;
+}
+
+.music-banner h1 {
+  font-size: 38px;
+  color: #ffffff;
+  margin: 0;
+}
+
+.music-banner p {
+  font-size: 17px;
+  color: #e0d6ff;
+  margin-top: 10px;
+}
+
+/* CARDS */
+.music-cards {
+  max-width: 1200px;
+  margin: 80px auto;
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 40px;
+  padding: 0 20px;
+}
+
+
+
+/* First row: 3 cards */
+.music-card:nth-child(1),
+.music-card:nth-child(2),
+.music-card:nth-child(3) {
+  grid-column: span 2;
+}
+
+/* Second row: centered 2 cards */
+.music-card:nth-child(4) {
+  grid-column: 2 / span 2;
+}
+
+.music-card:nth-child(5) {
+  grid-column: 4 / span 2;
+}
+
+
+
+
+.music-card {
+  background: #f7f5ff;
+  padding: 30px 20px;
+  border-radius: 14px;
+  text-align: center;
+  box-shadow: 0 8px 18px rgba(0,0,0,0.1);
+}
+
+.music-card img {
+  width: 70px;
+  margin-bottom: 20px;
+}
+
+.music-card h3 {
+  color: #2a1740;
+  margin-bottom: 12px;
+}
+
+.music-card p {
+  color: #555;
+  margin-bottom: 25px;
+}
+
+/* BUTTON */
+.music-card button {
+  padding: 12px 22px;
+  border: none;
+  background-color: black;
+  color: white;
+  border-radius: 25px;
+  cursor: pointer;
+}
+
+.music-card button:hover {
+  background-color: #333;
+}
+
+/* MODAL */
+/* MODAL FIX */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 100vw;
+  background: rgba(0,0,0,0.7);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+}
+
+.modal-box {
+  background: #fff;
+  width: 90%;
+  max-width: 1000px;
+  max-height: 80vh;
+  overflow-y: auto;
+  padding: 60px 40px 40px; /* 👈 TOP PADDING FIX */
+  border-radius: 12px;
+  position: relative;
+}
+.modal-box h2 {
+  margin-top: 0;
+  text-align: center;
+  color: #000;
+  font-size: 26px;
+  position: relative;
+  z-index: 1;
+}
+
+
+
+/* LOCK BACKGROUND SCROLL */
+body.modal-open {
+  overflow: hidden;
+}
+
+/* CLOSE BUTTON */
+.close-btn {
+   position: absolute;
+  top: 15px;
+  right: 15px;
+  margin-left: auto;
+  width: 36px;
+  height: 36px;
+  background: #000;
+  color: #fff;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 22px;
+  cursor: pointer;
+  z-index: 100;
+}
+
+.timeline-item h4 {
+  color: #000;
+}
+
+.timeline-item p {
+  color: #333;
+}
+
+/* RESPONSIVE */
+@media (max-width: 900px) {
+  .music-cards {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* TIMELINE */
+.timeline-container {
+  position: relative;
+  margin: 30px 0;
+  padding: 20px 0;
+}
+
+
+.timeline-container::before {
+  content: "";
+  position: absolute;
+  left: 50%;
+  top: 0;
+  width: 4px;
+  height: 100%;
+  background: #000;
+  transform: translateX(-50%);
+}
+
+.timeline-item {
+  display: flex;
+  width: 100%;
+  position: relative;
+  margin: 30px 0;
+}
+
+.timeline-item::before {
+  content: "";
+  position: absolute;
+  left: 50%;
+  width: 16px;
+  height: 16px;
+  background: #000;
+  border-radius: 50%;
+  transform: translateX(-50%);
+  top: 25px;
+}
+
+.timeline-item.left {
+  justify-content: flex-start;
+}
+
+.timeline-item.right {
+  justify-content: flex-end;
+}
+
+.timeline-item .content {
+  width: 45%;
+  background: #f7f5ff;
+  padding: 20px;
+  border-radius: 12px;
+  text-align: center;    
+  box-shadow: 0 6px 12px rgba(0,0,0,0.1);
+  color: #000;
+}
+
+/* REGISTRATION FORM STYLES */
+.modal-title {
+  text-align: center;
+  font-size: 26px;
+  color: #000;
+  margin-bottom: 30px;
+}
+
+.registration-form {
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+}
+
+.form-subtitle {
+  font-size: 20px;
+  color: #2a1740;
+  border-bottom: 1px solid #ddd;
+  padding-bottom: 8px;
+  margin-top: 20px;
+}
+
+.form-row {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+/* ONLY text-like inputs */
+.registration-form input[type="text"],
+.registration-form input[type="email"],
+.registration-form input[type="tel"],
+.registration-form input[type="password"],
+.registration-form select,
+.registration-form textarea {
+  flex: 1;
+  padding: 12px 14px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  font-size: 14px;
+}
+
+.registration-form input[type="checkbox"],
+.registration-form input[type="radio"] {
+  flex: unset;
+  width: auto;
+  margin: 0;
+}
+
+
+.registration-form textarea {
+  resize: none;
+  height: 80px;
+}
+
+.checkbox-row,
+.radio-row {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.checkbox-row label,
+.radio-row label {
+  color: #000 !important;
+  font-size: 14px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  cursor: pointer;
+}
+
+.register-btn {
+  background: #000;
+  color: white;
+  border: none;
+  padding: 14px;
+  border-radius: 30px;
+  font-size: 16px;
+  cursor: pointer;
+  margin-top: 30px;
+}
+
+.register-btn:hover {
+  background: #333;
+}
+
+/* RADIO & CHECKBOX TITLES FIX */
+.radio-row > label:first-child,
+.checkbox-row > label:first-child {
+  font-weight: bold;
+  color: #000;
+  margin-right: 10px;
+}
+
+
+
+
+.category-box {
+  background: #f7f5ff;
+  padding: 20px;
+  border-radius: 12px;
+  margin-bottom: 25px;
+  box-shadow: 0 6px 12px rgba(0,0,0,0.1);
+}
+
+.category-box img {
+  width: 100%;
+  max-height: 180px;
+  object-fit: cover;
+  border-radius: 10px;
+  margin-bottom: 15px;
+}
+
+.category-box h3 {
+  text-align: center;
+  color: #2a1740;
+  margin-bottom: 10px;
+}
+
+.category-box p {
+  text-align: center;
+  color: #333;
+  line-height: 1.6;
+}
+
+.category-box ul {
+  list-style: none;
+  padding: 0;
+  margin-top: 15px;
+}
+
+.category-box ul li {
+  background: #fff;
+  padding: 8px;
+  border-radius: 6px;
+  margin-bottom: 8px;
+  text-align: center;
+  color: #000;
+}
+
+
+
+/* RULES MODAL */
+.rules-container {
+  margin-top: 20px;
+}
+
+.rule-section {
+  margin-bottom: 15px;
+}
+
+.rule-header {
+  background: #f7f5ff;
+  padding: 14px 18px;
+  border-radius: 10px;
+  font-weight: bold;
+  cursor: pointer;
+  color: #2a1740;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+}
+
+.rule-header:hover {
+  background: #ece8ff;
+}
+
+.rule-content {
+  margin-top: 10px;
+  background: #ffffff;
+  padding: 15px 20px;
+  border-radius: 8px;
+  list-style: disc;
+  color: #000;
+}
+
+.rule-content li {
+  margin-bottom: 8px;
+}
+
+
+/* AV GUIDE MODAL */
+.av-guidelines {
+  margin-top: 20px;
+  color: #000;
+}
+
+.av-guidelines p {
+  margin-bottom: 15px;
+  font-size: 15px;
+}
+
+.av-guidelines ul {
+  padding-left: 20px;
+}
+
+.av-guidelines li {
+  margin-bottom: 10px;
+  line-height: 1.5;
+}

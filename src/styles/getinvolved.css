@@ -1,0 +1,114 @@
+/* PAGE */
+.getinvolved-page {
+  background-color: #ffffff;
+  min-height: 100vh;
+  padding-top: 100px;
+  padding-bottom: 80px;
+  font-family: Arial, sans-serif;
+}
+
+/* FULL WIDTH BANNER   */
+.getinvolved-banner {
+  text-align: center;
+  background-color: #3c5671;
+  padding: 80px 0 50px;   /* adjust height here */
+}
+
+
+.getinvolved-banner h1 {
+  font-size: 38px;
+  color: #ffffff;
+  font-weight: bold;
+  margin: 0;
+}
+
+.getinvolved-banner p {
+  font-size: 17px;
+  color: #e0d6ff;
+  margin-top: 10px;
+}
+
+
+/* CONTENT */
+.getinvolved-content {
+  max-width: 1300px;
+  margin: 70px auto 0;
+  padding: 0 20px;
+}
+
+/* WHY JOIN */
+.why-join h2 {
+  color: #2a1740;
+  font-size: 32px;
+  margin-bottom: 15px;
+  text-align: left;
+}
+
+.why-join p {
+  color: #444;
+  max-width: 100%;
+  line-height: 1.7;
+  margin-bottom: 50px;
+}
+
+/* CARDS */
+.involve-cards {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 55px;
+}
+
+.involve-card {
+  background-color: #f7f5ff;
+  padding: 30px 25px;
+  border-radius: 14px;
+  text-align: center;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+  transition: transform 0.3s ease;
+}
+
+.involve-card:hover {
+  transform: translateY(-8px);
+}
+
+.involve-card img {
+  width: 70px;
+  margin-bottom: 20px;
+}
+
+.involve-card h3 {
+  color: #2a1740;
+  margin-bottom: 15px;
+}
+
+.involve-card p {
+  color: #555;
+  line-height: 1.6;
+  margin-bottom: 25px;
+}
+
+/* BUTTON */
+.action-btn {
+  display: inline-block;
+  padding: 12px 22px;
+  background-color: #a569ff;
+  color: #ffffff;
+  text-decoration: none;
+  border-radius: 6px;
+  font-weight: bold;
+}
+
+.action-btn:hover {
+  background-color: #8b4de6;
+}
+
+/* RESPONSIVE */
+@media (max-width: 900px) {
+  .involve-cards {
+    grid-template-columns: 1fr;
+  }
+
+  .getinvolved-banner h1 {
+    font-size: 30px;
+  }
+}

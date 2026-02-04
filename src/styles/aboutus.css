@@ -1,0 +1,412 @@
+
+
+/* PAGE BACKGROUND */
+.about-page {
+  min-height: 100vh;
+  background-color: #ffffff; /* FULL PAGE WHITE */
+  font-family: Arial, sans-serif;
+}
+
+/* ABOUT US TITLE */
+.about-header {
+  text-align: center;
+  background-color: #d2e7f8;
+  padding: 100px 0 60px;
+}
+
+.about-header h1 {
+  font-size: 48px;
+  font-weight: bold;
+  color: #2e1b40; /* dark blue for white bg */
+}
+
+.about-subtitle {
+  font-size: 18px;
+  color: #2e1b40;
+  margin-top: 10px;
+  font-weight: 500;
+}
+
+
+/* CONTENT SECTION (NO CARD) */
+.about-card {
+  max-width: 1300px;
+  margin: 40px auto 0px; /* 👈 pushes content down */
+  display: flex;
+  align-items: center;
+  gap: 70px;
+ padding: 0 50px 60px 80px;
+}
+
+
+/* LEFT TEXT */
+.about-text {
+  flex: 1;
+}
+
+.about-icon {
+  width: 60px;
+  margin-bottom: 5px;
+  margin-top: 20px;
+}
+
+.about-text-content {
+  margin-top: 30px; /* 👈 adjust this */
+}
+
+.about-text h2 {
+  font-size: 35px;
+  font-weight: bold;
+  color: #2e1b40;/* highlight color */
+  margin-bottom: 20px;
+}
+
+.about-text p {
+  font-size: 20px;
+  line-height: 1.9;
+  color: #333333; /* readable on white */
+  margin-bottom: 18px;
+}
+
+/* RIGHT IMAGE */
+.about-image {
+  flex: 1;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.about-image img {
+  width: 75%;
+  height: 500px;
+  border-radius: 6px;
+  object-fit: cover;
+}
+
+/* RESPONSIVE */
+@media (max-width: 900px) {
+  .about-card {
+    flex-direction: column;
+  }
+
+  .about-header h1 {
+    font-size: 36px;
+  }
+
+  .about-text h2 {
+    font-size: 24px;
+  }
+}
+
+
+
+/* WHAT WE DO SECTION */
+.what-we-do {
+  display: flex;
+  align-items: center;
+  max-width: 1300px;
+  margin: 5px auto 30px; /* space above and below */
+  padding: 30px 40px;
+  background-color: #d2e7f8; 
+  /* border-radius: 6px;*/ 
+  gap: 40px;
+}
+
+.what-we-do-image {
+  flex: 1;
+}
+
+.what-we-do-image img {
+  width: 100%;
+  height: auto;
+  border-radius: 6px;
+  object-fit: cover;
+}
+
+.what-we-do-text {
+  flex: 2;
+}
+
+.what-we-do-text h2 {
+  font-size: 32px;
+  color: #2e1b40;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+.what-we-do-text p {
+  font-size: 18px;
+  line-height: 1.8;
+  color: #333333;
+  margin-bottom: 16px;
+}
+
+/* RESPONSIVE */
+@media (max-width: 900px) {
+  .what-we-do {
+    flex-direction: column;
+  }
+
+  .what-we-do-text h2 {
+    font-size: 28px;
+  }
+
+  .what-we-do-text p {
+    font-size: 16px;
+  }
+}
+
+
+
+.journey-section {
+  margin-top: 0px;
+  padding: 30px 0;
+  text-align: center;
+}
+
+.journey-title {
+  font-size: 36px;
+  font-weight: bold;
+  color: #2e1b40;
+  margin-bottom: 60px;
+   max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: left;
+  padding-left: 80px;
+}
+
+/* LINE HOLDER */
+.journey-line {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  position: relative;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* MIDDLE HORIZONTAL LINE */
+.journey-line::before {
+  content: "";
+  position: absolute;
+  top: 90px;
+  left: 0;
+  width: 100%;
+  height: 3px;
+  background-color: #2e1b40; /* 🔥 requested color */
+  z-index: 1;
+}
+
+/* EACH STEP */
+.journey-step {
+  position: relative;
+  width: 22%;
+  text-align: center;
+  z-index: 2;
+}
+
+/* YEAR */
+.journey-year {
+  font-size: 20px;
+  font-weight: 600;
+  color: #2e1b40;
+  margin-bottom: 12px;
+  display: block;
+}
+
+/* ICON */
+.journey-step img {
+  width: 60px;
+  height: 60px;
+  background: #fff;
+  padding: 8px;
+  border-radius: 50%;
+}
+
+/* DOT BELOW ICON */
+.journey-dot {
+  width: 14px;
+  height: 14px;
+  background-color: #2e1b40;
+  border-radius: 50%;
+  margin: 10px auto 15px;
+}
+
+/* TEXT */
+.journey-step p {
+  font-size: 16px;
+  color: #333;
+  line-height: 1.6;
+}
+
+@@media (max-width: 900px) {
+  .journey-title {
+    text-align: center;
+    padding-left: 0;
+  }
+
+
+  .journey-line::before {
+    display: none;
+  }
+
+  .journey-step {
+    width: 100%;
+    margin-bottom: 50px;
+  }
+}
+
+/* OUR TEAM SECTION */
+.our-team {
+  max-width: 1300px;
+  margin: 40px auto 80px;
+  text-align: center;
+}
+
+.our-team h2 {
+  font-size: 36px;
+  font-weight: bold;
+  color: #2e1b40;
+  margin-bottom: 40px;
+}
+
+/* GRID */
+.team-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 40px;
+  justify-items: center;
+}
+
+/* MEMBER CARD */
+.team-member {
+  text-align: center;
+}
+
+.team-member img {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 3px solid #2e1b40;
+  margin-bottom: 12px;
+  transition: transform 0.3s ease;
+}
+
+.team-member img:hover {
+  transform: scale(1.05);
+}
+
+.team-member h4 {
+  font-size: 18px;
+  color: #2e1b40;
+  margin: 5px 0;
+}
+
+.team-member p {
+  font-size: 14px;
+  color: #555;
+}
+
+/* SOCIAL ICONS – ORIGINAL ICONS ONLY */
+.team-socials {
+  margin-top: 10px;
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+}
+
+.team-socials img {
+  width: 22px;
+  height: 22px;
+  cursor: pointer;
+  border-radius: 0 !important;
+  background: transparent !important;
+  border: none !important;
+  box-shadow: none !important;
+  padding: 0 !important;
+
+  transition: transform 0.2s ease, opacity 0.2s ease;
+}
+
+.team-socials img:hover {
+  transform: scale(1.1);  /* subtle hover */
+  opacity: 0.85;
+}
+
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+  .team-member img {
+    width: 140px;
+    height: 140px;
+  }
+}
+
+/* IMPACT STATS */
+.impact-section {
+  max-width: 1200px;
+  margin: 40px auto 0;      /* no bottom margin */
+  padding: 0 40px 60px;    /* space before footer */
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 30px;
+}
+
+
+
+.impact-card {
+  background-color: #d2e7f8;
+  text-align: center;
+  padding: 30px 20px;
+  border-radius: 6px;
+  border: 1px solid #e6e6e6;
+}
+
+.impact-card img {
+  width: 50px;
+  height: 50px;
+  margin-bottom: 15px;
+}
+
+.impact-card h3 {
+  font-size: 32px;
+  font-weight: bold;
+  color: #2e1b40;
+  margin-bottom: 8px;
+}
+
+.impact-card p {
+  font-size: 16px;
+  color: #555;
+}
+
+.impact-card {
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.impact-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 8px 18px rgba(0,0,0,0.1);
+}
+
+
+/* RESPONSIVE */
+@media (max-width: 900px) {
+  .impact-section {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 500px) {
+  .impact-section {
+    grid-template-columns: 1fr;
+  }
+}
+
+
+
+
+
+
+
