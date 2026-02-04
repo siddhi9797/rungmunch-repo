@@ -8,7 +8,16 @@ const authRoutes = require("./routes/authRoutes"); // make sure this file exists
 const app = express();
 
 // Middleware
-app.use(cors());
+app.use(cors({
+  origin: [
+    "https://rungmunch-repo.vercel.app",
+    "http://localhost:3000"
+  ],
+  methods: ["GET", "POST", "PUT", "DELETE"],
+  credentials: true
+}));
+
+
 app.use(express.json());
 
 // Test route (ADD THIS HERE)
