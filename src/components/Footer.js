@@ -36,11 +36,11 @@ function Footer() {
         <p>© 2016–2024 Rungmunch – Theater with a Cause</p>
 
         <div className="footer-social">
-          <a href="#"><FaYoutube /></a>
-          <a href="#"><FaFacebookF /></a>
-          <a href="#"><FaInstagram /></a>
-          <a href="#"><FaWhatsapp /></a>
-        </div>
+  <a href="https://youtube.com/yourchannel" target="_blank" rel="noopener noreferrer"><FaYoutube /></a>
+  <a href="https://facebook.com/yourpage" target="_blank" rel="noopener noreferrer"><FaFacebookF /></a>
+  <a href="https://instagram.com/yourpage" target="_blank" rel="noopener noreferrer"><FaInstagram /></a>
+  <a href="https://wa.me/1234567890" target="_blank" rel="noopener noreferrer"><FaWhatsapp /></a>
+</div>
       </div>
     </footer>
   );
