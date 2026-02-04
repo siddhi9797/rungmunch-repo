@@ -258,10 +258,14 @@ body {
 }
 
 .privacy-link {
-  color: #ffffff;
-  font-size: 14px;
-  text-decoration: none;
+  background: none;
+  border: none;
+  color: #fff;
+  cursor: pointer;
+  padding: 0;
+  text-decoration: underline;
 }
+
 
 .privacy-link:hover {
   text-decoration: underline;

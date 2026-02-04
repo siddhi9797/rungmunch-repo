@@ -17,7 +17,10 @@ function Footer() {
             together to produce great theater to raise funds for a worthy cause.
           </p>
 
-          <a href="#" className="privacy-link">Privacy Policy</a>
+          <button type="button" className="privacy-link">
+  Privacy Policy
+</button>
+
         </div>
 
         {/* RIGHT */}
