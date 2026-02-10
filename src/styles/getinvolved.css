@@ -1,19 +1,20 @@
-/* PAGE */
+
+
+
 .getinvolved-page {
   background-color: #ffffff;
   min-height: 100vh;
   padding-top: 100px;
   padding-bottom: 80px;
   font-family: Arial, sans-serif;
+  overflow-x: hidden; 
 }
 
-/* FULL WIDTH BANNER   */
 .getinvolved-banner {
   text-align: center;
   background-color: #3c5671;
-  padding: 80px 0 50px;   /* adjust height here */
+  padding: 80px 20px 50px; 
 }
-
 
 .getinvolved-banner h1 {
   font-size: 38px;
@@ -102,13 +103,60 @@
   background-color: #8b4de6;
 }
 
-/* RESPONSIVE */
+/* ================= MOBILE RESPONSIVE ================= */
+
 @media (max-width: 900px) {
-  .involve-cards {
-    grid-template-columns: 1fr;
+
+  /* Banner */
+  .getinvolved-banner {
+    padding: 60px 20px 40px;
   }
 
   .getinvolved-banner h1 {
-    font-size: 30px;
+    font-size: 26px;
+    line-height: 1.3;
   }
+
+  .getinvolved-banner p {
+    font-size: 14px;
+  }
+
+  /* Why Join Section */
+  .why-join h2 {
+    font-size: 24px;
+    text-align: center;
+  }
+
+  .why-join p {
+    font-size: 14px;
+    text-align: center;
+  }
+
+  /* Cards */
+  .involve-cards {
+    grid-template-columns: 1fr;
+    gap: 25px;
+  }
+
+  .involve-card {
+    padding: 25px 18px;
+  }
+
+  .involve-card img {
+    width: 60px;
+  }
+
+  .involve-card h3 {
+    font-size: 18px;
+  }
+
+  .involve-card p {
+    font-size: 14px;
+  }
+
+  .action-btn {
+    width: 100%;
+    padding: 12px 0;
+  }
+
 }

@@ -8,6 +8,8 @@ function Header() {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   const [user, setUser] = useState(null);
+  const [showMobileMenu, setShowMobileMenu] = useState(false);
+
 
   const dropdownRef = useRef();
   const navigate = useNavigate();
@@ -102,12 +104,19 @@ function Header() {
     <div className="logo-section">
       <img src={logo} alt="Rungmunch Logo" className="logo" />
     </div>
+<button
+  className="menu-toggle"
+  onClick={() => setShowMobileMenu(!showMobileMenu)}
+>
+  ☰
+</button>
 
     {/* CENTER — tabs only */}
-<div className="nav-links">
-  <Link to="/">Home</Link>
-  <Link to="/about">About Us</Link>
-  <Link to="/events">Events</Link>
+<div className={`nav-links ${showMobileMenu ? "active" : ""}`}>
+
+  <Link to="/" onClick={() => setShowMobileMenu(false)}>Home</Link>
+<Link to="/about" onClick={() => setShowMobileMenu(false)}>About Us</Link>
+<Link to="/events" onClick={() => setShowMobileMenu(false)}>Events</Link>
 
   <div className="dropdown" ref={dropdownRef}>
     <span
@@ -119,48 +128,48 @@ function Header() {
 
     {showCompetition && (
       <div className="dropdown-menu">
-        <Link to="/competition/music">Music</Link>
-        <Link to="/competition/dance">Dance</Link>
-        <Link to="/competition/instrumental">Instrumental</Link>
+      <Link to="/competition/music" onClick={() => setShowMobileMenu(false)}>Music</Link>
+      <Link to="/competition/dance" onClick={() => setShowMobileMenu(false)}>Dance</Link>
+      <Link to="/competition/instrumental" onClick={() => setShowMobileMenu(false)}>Instrumental</Link>
       </div>
     )}
   </div>
 
-  <Link to="/get-involved">Get Involved</Link>
-  <Link to="/contact">Contact</Link>
+  <Link to="/get-involved" onClick={() => setShowMobileMenu(false)}>Get Involved</Link>
+ <Link to="/contact" onClick={() => setShowMobileMenu(false)}>Contact</Link>
+
+
+{/* ADD THIS HERE */}
+  <div className="auth-actions">
+    {user && (
+      <button
+        type="button"
+        className="user-btn"
+        onClick={() => navigate("/my-history")}
+      >
+        {user}
+      </button>
+    )}
+
+    {!user ? (
+      <button
+        type="button"
+        className="login-btn"
+        onClick={() => setShowLogin(true)}
+      >
+        Login
+      </button>
+    ) : (
+      <button
+        type="button"
+        className="login-btn"
+        onClick={handleLogout}
+      >
+        Logout
+      </button>
+    )}
+  </div>
 </div>
-
-{/* RIGHT — username + logout */}
-<div className="auth-actions">
-  {user && (
-    <button
-      type="button"
-      className="user-btn"
-      onClick={() => navigate("/my-history")}
-    >
-      {user}
-    </button>
-  )}
-
-  {!user ? (
-    <button
-      type="button"
-      className="login-btn"
-      onClick={() => setShowLogin(true)}
-    >
-      Login
-    </button>
-  ) : (
-    <button
-      type="button"
-      className="login-btn"
-      onClick={handleLogout}
-    >
-      Logout
-    </button>
-  )}
-</div>
-
 </div>
 </nav>
 

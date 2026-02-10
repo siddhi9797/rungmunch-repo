@@ -164,10 +164,133 @@ body.modal-open {
 
 /* RESPONSIVE */
 @media (max-width: 900px) {
+
+  /* CARDS STACK */
   .music-cards {
+    display: grid;
     grid-template-columns: 1fr;
+    gap: 25px;
   }
+
+  .music-card {
+    grid-column: unset !important;
+  }
+
+  /* Banner */
+  .music-banner {
+    padding: 60px 20px 40px;
+  }
+
+  .music-banner h1 {
+    font-size: 26px;
+  }
+
+  .music-banner p {
+    font-size: 14px;
+  }
+  /* TIMELINE MOBILE FIX */
+.timeline-container::before {
+  left: 50%;
+  transform: translateX(-50%);
 }
+
+.timeline-item {
+  width: 100%;
+  display: flex;
+}
+
+.timeline-item.left {
+  justify-content: flex-start;
+}
+
+.timeline-item.right {
+  justify-content: flex-end;
+}
+
+.timeline-item .content {
+  width: 44%;
+  font-size: 14px;
+}
+
+.timeline-item::before {
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+/* MODAL MOBILE */
+.modal-box {
+  width: 95%;
+  padding: 50px 20px 30px;
+  max-height: 85vh;
+}
+
+.close-btn {
+  top: 10px;
+  right: 10px;
+}
+/* REGISTRATION MOBILE */
+.registration-form {
+  gap: 18px;
+}
+
+.form-row {
+  flex-direction: column;
+  gap: 15px;
+}
+
+.checkbox-row,
+.radio-row {
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 10px;
+}
+
+.register-btn {
+  width: 100%;
+}
+/* REGISTRATION MOBILE */
+.registration-form {
+  gap: 18px;
+}
+
+.form-row {
+  flex-direction: column;
+  gap: 15px;
+}
+
+.checkbox-row,
+.radio-row {
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 10px;
+}
+
+.register-btn {
+  width: 100%;
+}
+/* REGISTRATION MOBILE */
+.registration-form {
+  gap: 18px;
+}
+
+.form-row {
+  flex-direction: column;
+  gap: 15px;
+}
+
+.checkbox-row,
+.radio-row {
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 10px;
+}
+
+.register-btn {
+  width: 100%;
+}
+
+}
+
 
 /* TIMELINE */
 .timeline-container {

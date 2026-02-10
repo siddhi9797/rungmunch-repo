@@ -1,18 +1,21 @@
 
 
-/* PAGE BACKGROUND */
+
 .about-page {
   min-height: 100vh;
-  background-color: #ffffff; /* FULL PAGE WHITE */
+  background-color: #ffffff;
   font-family: Arial, sans-serif;
+   padding-top: 90px; 
 }
 
-/* ABOUT US TITLE */
+
 .about-header {
   text-align: center;
   background-color: #d2e7f8;
-  padding: 100px 0 60px;
+   padding: 20px 0 50px; 
 }
+
+
 
 .about-header h1 {
   font-size: 48px;
@@ -84,16 +87,42 @@
 
 /* RESPONSIVE */
 @media (max-width: 900px) {
+ 
   .about-card {
     flex-direction: column;
+    padding: 0 20px 40px;
+    gap: 30px;
+  }
+  .about-page {
+   padding-top: 80px;
+  }
+
+   .about-header {
+    padding: 15px 0 40px;
   }
 
   .about-header h1 {
-    font-size: 36px;
+    font-size: 30px;
   }
 
-  .about-text h2 {
-    font-size: 24px;
+  .about-subtitle {
+      font-size: 14px;
+  }
+
+    .about-text h2 {
+    font-size: 26px;
+  }
+   .about-text p {
+    font-size: 16px;
+    line-height: 1.7;
+  }
+    .about-image {
+    justify-content: center;
+  }
+
+  .about-image img {
+    width: 100%;
+    height: auto;
   }
 }
 
@@ -142,18 +171,22 @@
 
 /* RESPONSIVE */
 @media (max-width: 900px) {
+
   .what-we-do {
     flex-direction: column;
+    padding: 25px 20px;
+    gap: 25px;
   }
 
   .what-we-do-text h2 {
-    font-size: 28px;
+    font-size: 24px;
   }
 
   .what-we-do-text p {
-    font-size: 16px;
+    font-size: 15px;
   }
 }
+
 
 
 
@@ -239,13 +272,20 @@
   line-height: 1.6;
 }
 
-@@media (max-width: 900px) {
+@media (max-width: 900px) {
+
   .journey-title {
     text-align: center;
     padding-left: 0;
   }
 
+  .journey-line {
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+  }
 
+  /* 🔥 REMOVE horizontal line in mobile */
   .journey-line::before {
     display: none;
   }
@@ -255,6 +295,8 @@
     margin-bottom: 50px;
   }
 }
+
+
 
 /* OUR TEAM SECTION */
 .our-team {
@@ -337,17 +379,25 @@
 
 /* RESPONSIVE */
 @media (max-width: 768px) {
+
   .team-member img {
     width: 140px;
     height: 140px;
   }
+
+  .team-socials img {
+    width: 18px !important;
+    height: 18px !important;
+  }
+
 }
+
 
 /* IMPACT STATS */
 .impact-section {
   max-width: 1200px;
   margin: 40px auto 0;      /* no bottom margin */
-  padding: 0 40px 60px;    /* space before footer */
+  padding: 0 20px 40px;    /* space before footer */
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   gap: 30px;
@@ -402,7 +452,7 @@
   .impact-section {
     grid-template-columns: 1fr;
   }
-}
+}                     
 
 
 
