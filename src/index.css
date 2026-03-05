@@ -167,7 +167,7 @@ h1, h2, h3, h4, h5 {
 
 .login-btn,
 .user-btn {
-  background-color: var(--gfm-green-main);
+  background: linear-gradient(180deg, var(--gfm-green-deep), var(--gfm-green-pro-dark));
   color: var(--text-light);
    font-family: 'Public Sans', sans-serif;
   border-radius: 25px;
