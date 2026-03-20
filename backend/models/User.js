@@ -25,7 +25,10 @@ const userSchema = new mongoose.Schema({
     type: String,
     required: true,
     enum: ["Offline", "Virtual"]
-  }
+  },
+  video: {
+  type: String   
+}
 
 }, { timestamps: true });
 

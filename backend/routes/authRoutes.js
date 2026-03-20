@@ -3,6 +3,8 @@ const express = require("express");
 const router = express.Router();
 const bcrypt = require("bcryptjs");
 const { User, Contact } = require("../models/User");
+const multer = require("multer");
+const path = require("path");
 
 // @route   POST /api/auth/register
 // @desc    Register a new user
@@ -122,5 +124,48 @@ router.post("/contact", async (req, res) => {
   }
 });
 
+const storage = multer.diskStorage({
+  destination: (req, file, cb) => {
+    cb(null, "uploads/");
+  },
+  filename: (req, file, cb) => {
+    cb(null, Date.now() + path.extname(file.originalname));
+  }
+});
+
+const upload = multer({ storage });
+
+
+
+
+router.post("/upload-video", upload.single("video"), async (req, res) => {
+  try {
+    const { userId } = req.body;
+
+    const user = await User.findById(userId);
+
+    // ❌ Not logged in / invalid
+    if (!user) {
+      return res.status(401).json({ message: "User not found" });
+    }
+
+    // ❌ Mode check
+    if (user.mode !== "Virtual") {
+      return res.status(403).json({
+        message: "Only virtual users can upload video"
+      });
+    }
+
+    // ✅ Save video path
+    user.video = req.file.path;
+    await user.save();
+
+    res.json({ message: "Video uploaded successfully" });
+
+  } catch (err) {
+    console.error(err);
+    res.status(500).json({ message: "Upload failed" });
+  }
+});
 
 module.exports = router;
