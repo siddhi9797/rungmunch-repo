@@ -1,3 +1,5 @@
+const mongoose = require("mongoose");  
+
 const userSchema = new mongoose.Schema({
   firstName: { type: String, required: true },
   lastName: { type: String, required: true },
@@ -15,14 +17,16 @@ const userSchema = new mongoose.Schema({
   city: { type: String, required: true },
   zip: { type: String, required: true },
   state: { type: String, required: true },
-gender: { type: String, required: true },
+  gender: { type: String, required: true },
 
-mode: {
-  type: String,
-  required: true,
-  enum: ["Offline", "Virtual"]
-},
-password: { type: String, required: true }
+  password: { type: String, required: true },
+
+  mode: {
+    type: String,
+    required: true,
+    enum: ["Offline", "Virtual"]
+  }
+
 }, { timestamps: true });
 
 
