@@ -20,46 +20,42 @@ function Vista() {
   }, []);
 
   // ✅ Upload handler
-  const handleSubmit = async () => {
-    if (!video) {
-      alert("Please upload a video first!");
-      return;
-    }
+const handleSubmit = async () => {
+  if (!video) {
+    alert("Please upload a video first!");
+    return;
+  }
 
-    if (!user) {
-      alert("Please login first!");
-      return;
-    }
+  const user = JSON.parse(localStorage.getItem("rungmunchUser"));
 
-    // ❌ Only virtual users allowed
-    if (user.mode !== "Virtual") {
-      alert("Only virtual participants can upload videos!");
-      return;
-    }
+  if (!user) {
+    alert("Please login first!");
+    return;
+  }
 
-    const formData = new FormData();
-    formData.append("video", video);
-    formData.append("userId", user.id);
+  const formData = new FormData();
+  formData.append("video", video);
+  formData.append("userId", user.id);
 
-    try {
-      const res = await fetch(
-        `${process.env.REACT_APP_API_URL}/api/auth/upload-video`,
-        {
-          method: "POST",
-          body: formData
-        }
-      );
+  try {
+    const res = await fetch(
+      `${process.env.REACT_APP_API_URL}/api/auth/upload-video`,
+      {
+        method: "POST",
+        body: formData
+      }
+    );
 
-      const data = await res.json();
-      alert(data.message);
+    const data = await res.json();
 
-      setVideo(null); // reset after upload
+    console.log("SERVER RESPONSE:", data); // 👈 ADD THIS
+    alert(data.message);
 
-    } catch (err) {
-      console.error(err);
-      alert("Upload failed");
-    }
-  };
+  } catch (err) {
+    console.error("UPLOAD ERROR:", err); // 👈 ADD THIS
+    alert("Upload failed");
+  }
+};
 
   return (
     <div className="page">
