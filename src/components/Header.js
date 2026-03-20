@@ -3,7 +3,6 @@ import { useState, useEffect, useRef } from "react";
 import logo from "../assets/logo.png";
 
 function Header() {
-  const [showCompetition, setShowCompetition] = useState(false);
   const [showInitiatives, setShowInitiatives] = useState(false);
   const [showLogin, setShowLogin] = useState(false);
   const [username, setUsername] = useState("");
@@ -33,7 +32,6 @@ function Header() {
         dropdownRef.current &&
         !dropdownRef.current.contains(e.target)
       ) {
-        setShowCompetition(false);
         setShowInitiatives(false);
       }
     };
@@ -107,26 +105,6 @@ function Header() {
             {/* ✅ WRAPPED BOTH DROPDOWNS */}
             <div ref={dropdownRef} style={{ display: "flex", gap: "40px" }}>
 
-              {/* Competition */}
-              <div className="dropdown">
-                <span
-                  className="dropdown-title"
-                  onClick={() => {
-                    setShowCompetition(!showCompetition);
-                    setShowInitiatives(false);
-                  }}
-                >
-                  Competition ▾
-                </span>
-
-                {showCompetition && (
-                  <div className="dropdown-menu">
-                    <Link to="/competition/music" onClick={() => setShowMobileMenu(false)}>Music</Link>
-                    <Link to="/competition/dance" onClick={() => setShowMobileMenu(false)}>Dance</Link>
-                    <Link to="/competition/instrumental" onClick={() => setShowMobileMenu(false)}>Instrumental</Link>
-                  </div>
-                )}
-              </div>
 
               {/* Initiatives */}
               <div className="dropdown">
@@ -134,7 +112,7 @@ function Header() {
                   className="dropdown-title"
                   onClick={() => {
                     setShowInitiatives(!showInitiatives);
-                    setShowCompetition(false);
+                  
                   }}
                 >
                   Our Initiatives ▾

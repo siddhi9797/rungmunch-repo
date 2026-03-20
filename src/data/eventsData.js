@@ -259,7 +259,13 @@ const wwiiEvents = [
     title: "Community Engagement Program",
     description: "Encouraging youth participation.",
     type: "wwii"
-  }
+  },
+  {
+    id: 3,
+    title: "Talent Discovery Workshop",
+    description: "Identifying and nurturing hidden artistic talents.",
+    type: "wwii"
+}
 ];
 
 

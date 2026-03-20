@@ -3,7 +3,7 @@
 /* HEADER (Same as About Page) */
 
 .page {
-  padding-top: 90px;
+    padding-top: 0;
 }
 .page-header {
   text-align: center;
@@ -14,7 +14,7 @@
     #99d0b0,
     #66b388
   );
-  padding: 40px 0 60px;
+   padding: 20px 0 40px;
   border-bottom: 1px solid #e6f3eb;
   position: relative; /* ✅ IMPORTANT */
 }
@@ -314,4 +314,145 @@
   display: flex;
   justify-content: flex-end;
   margin: 10px 20px 0;
+}
+
+
+/* Competition Section */
+.competition-section {
+  max-width: 1200px;
+  margin: 60px auto;
+  text-align: center;
+}
+
+.competition-section h2 {
+  margin-bottom: 30px;
+  font-size: 28px;
+}
+
+/* Cards Layout */
+.competition-cards {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  flex-wrap: wrap;
+}
+
+/* Individual Card */
+.competition-card {
+  width: 220px;
+  padding: 30px;
+  background: white;
+  border-radius: 12px;
+  cursor: pointer;
+  box-shadow: 0 15px 40px rgba(0,0,0,0.25); /* darker shadow */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.competition-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 25px 60px rgba(0,0,0,0.35); /* even deeper on hover */
+}
+
+.competition-card h3 {
+  color: var(--gfm-green-deep);
+}
+
+/* ===== WWII HERO SECTION ===== */
+
+.wwii-hero {
+  text-align: center;
+  padding: 40px 20px 40px;
+  margin-top: -20px; /* pulls hero closer to top */
+  animation: fadeInHero 1s ease;
+}
+
+/* BIG TITLE */
+.wwii-title {
+  font-size: 48px;
+  font-weight: 800;
+  color: #000000;
+  margin-bottom: 10px;
+  animation: slideDown 1s ease;
+}
+
+.wwii-title span {
+  display: block;
+  font-size: 22px;
+  font-weight: 500;
+  color: var(--gfm-green-main);
+  margin-top: 8px;
+}
+
+/* TAGLINE */
+.wwii-tagline {
+  font-size: 20px;
+  font-weight: 600;
+  color: var(--gfm-green-dark);
+  margin-bottom: 30px;
+  animation: fadeIn 1.5s ease;
+}
+
+/* CONTENT */
+.wwii-content {
+  max-width: 900px;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.wwii-content p {
+  background: var(--gfm-green-light);
+  padding: 16px 20px;
+  border-radius: 10px;
+  font-size: 16px;
+  line-height: 1.7;
+  color: var(--gfm-green-deep);
+  
+  /* Darker shadow */
+  box-shadow: 0 8px 20px rgba(0,0,0,0.25);
+
+  transform: translateY(30px);
+  opacity: 0;
+  animation: slideUp 0.8s ease forwards;
+}
+
+/* STAGGER ANIMATION */
+.wwii-content p:nth-child(1) { animation-delay: 0.3s; }
+.wwii-content p:nth-child(2) { animation-delay: 0.6s; }
+.wwii-content p:nth-child(3) { animation-delay: 0.9s; }
+.wwii-content p:nth-child(4) { animation-delay: 1.2s; }
+
+/* ===== ANIMATIONS ===== */
+
+@keyframes fadeInHero {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slideDown {
+  from {
+    transform: translateY(-40px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes slideUp {
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
 }
