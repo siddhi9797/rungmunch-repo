@@ -93,6 +93,8 @@ router.post("/login", async (req, res) => {
 // ================= VIDEO UPLOAD =================
 router.post("/upload-video", upload.single("video"), async (req, res) => {
   try {
+    console.log("FILE:", req.file);
+console.log("BODY:", req.body);
     const { userId } = req.body;
 
     const user = await User.findById(userId);
