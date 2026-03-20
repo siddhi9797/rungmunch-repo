@@ -20,8 +20,10 @@ function Registration()
   const [zip, setZip] = useState("");
   const [state, setState] = useState("");
   const [gender, setGender] = useState("");
+  const [mode, setMode] = useState(""); 
   const [password, setPassword] = useState("");
   const [confirmPassword, setConfirmPassword] = useState("");
+
 
   const stylesByCategory = {
     "Solo Singing": ["Classical", "Semi-Classical", "Bollywood"],
@@ -64,6 +66,7 @@ function Registration()
       state,
       gender,
       password,
+       mode
     };
 
     try {
@@ -218,6 +221,32 @@ function Registration()
             <option>18+</option>
           </select>
         </div>
+        <div className="form-row radio-row">
+  <label>Mode *</label>
+
+  <label>
+    <input
+      type="radio"
+      name="mode"
+      value="Offline"
+      checked={mode === "Offline"}
+      onChange={(e) => setMode(e.target.value)}
+      required
+    />
+    Offline
+  </label>
+
+  <label>
+    <input
+      type="radio"
+      name="mode"
+      value="Virtual"
+      checked={mode === "Virtual"}
+      onChange={(e) => setMode(e.target.value)}
+    />
+    Virtual
+  </label>
+</div>
 
         {/* More Details */}
         <h3 className="form-subtitle">More Details</h3>

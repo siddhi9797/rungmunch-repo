@@ -1,0 +1,317 @@
+/* ================= COMMON INITIATIVES PAGE ================= */
+
+/* HEADER (Same as About Page) */
+
+.page {
+  padding-top: 90px;
+}
+.page-header {
+  text-align: center;
+  background: linear-gradient(
+    180deg,
+    #e6f3eb,
+    #cce8d6,
+    #99d0b0,
+    #66b388
+  );
+  padding: 40px 0 60px;
+  border-bottom: 1px solid #e6f3eb;
+  position: relative; /* ✅ IMPORTANT */
+}
+
+/* ✅ ADD THIS */
+.page-header::after {
+  content: "";
+  position: absolute;
+  bottom: -70px;
+  left: 0;
+  width: 100%;
+  height: 140px;
+  background: #ffffff;
+  border-top-left-radius: 100% 140px;
+  border-top-right-radius: 100% 140px;
+  z-index: -1;
+}
+.initiative-header h1 {
+  font-size: 52px;
+  font-weight: 700;
+  color: var(--green-dark);
+  letter-spacing: -0.5px;
+}
+.initiative-subtitle {
+  font-size: 18px;
+  color: #555;
+  margin-top: 12px;
+}
+
+/* ================= BUTTON ================= */
+
+.initiative-btn {
+  background: var(--green-accent);
+  color: white;
+  padding: 12px 28px;
+  border-radius: 30px;
+  border: none;
+  cursor: pointer;
+  font-weight: 600;
+  transition: 0.3s ease;
+}
+
+.initiative-btn:hover {
+  background: #028a4c;
+  transform: scale(1.05);
+}
+
+/* ================= SECTION ================= */
+
+.initiative-section {
+  margin-top: 80px;
+  text-align: center;
+  padding: 0 20px;
+}
+
+.initiative-section h2 {
+  font-size: 32px;
+  color: var(--green-dark);
+  margin-bottom: 20px;
+}
+
+/* ================= STEPS ================= */
+
+.initiative-steps {
+  list-style: none;
+  padding: 0;
+  max-width: 600px;
+  margin: 20px auto;
+}
+
+.initiative-steps li {
+  margin-bottom: 12px;
+  font-size: 17px;
+  color: #444;
+}
+
+
+/* ================= ROADMAP ================= */
+
+.roadmap {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 25px;
+  margin-top: 50px;
+  flex-wrap: wrap;
+}
+
+.roadmap-step {
+  position: relative;
+  text-align: center;
+}
+
+/* Circle number */
+.circle {
+  width: 60px;
+  height: 60px;
+  background: var(--green-accent);
+  color: white;
+  font-size: 22px;
+  font-weight: bold;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto;
+  z-index: 2;
+  position: relative;
+}
+
+/* Popup box */
+.step-box {
+  margin-top: 15px;
+  background: #fff;
+  padding: 18px 20px;
+  border-radius: 12px;
+  width: 200px;
+
+  box-shadow:
+    0 6px 16px rgba(0, 0, 0, 0.08),
+    0 12px 28px rgba(0, 0, 0, 0.10);
+
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+/* Hover effect (interactive feel) */
+.step-box:hover {
+  transform: translateY(-10px) scale(1.05);
+  box-shadow:
+    0 10px 24px rgba(0, 0, 0, 0.12),
+    0 18px 36px rgba(0, 0, 0, 0.14);
+}
+
+/* Arrow */
+.arrow {
+  font-size: 30px;
+  color: var(--green-dark);
+}
+
+/* Text styling */
+.step-box h3 {
+  font-size: 18px;
+  color: var(--green-dark);
+  margin-bottom: 8px;
+}
+
+.step-box p {
+  font-size: 14px;
+  color: #555;
+}
+
+/* ================= MOBILE ================= */
+
+@media (max-width: 768px) {
+  .roadmap {
+    flex-direction: column;
+  }
+
+  .arrow {
+    transform: rotate(90deg);
+  }
+}
+
+/* ================= CARDS ================= */
+
+.initiative-cards {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+  margin-top: 40px;
+  padding: 0 20px;
+}
+
+.initiative-card {
+  background: #ffffff;  
+  border-radius: 14px;
+  padding: 20px;
+  transition: 0.3s ease;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.12);
+}
+
+.initiative-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.18);
+}
+
+.initiative-card h3 {
+  font-size: 20px;
+  margin-bottom: 10px;
+  color: var(--green-dark);
+}
+
+.initiative-card p {
+  font-size: 15px;
+  color: #555;
+}
+
+/* ================= UPLOAD SECTION (FOR VISTA 🔥) ================= */
+
+.upload-box {
+  margin: 40px auto;
+  padding: 30px;
+  border: 2px dashed #ccc;
+  border-radius: 12px;
+  max-width: 500px;
+  text-align: center;
+  transition: 0.3s;
+}
+
+.upload-box:hover {
+  border-color: var(--green-accent);
+  background: #f9fdfb;
+}
+
+.upload-box input {
+  margin-top: 10px;
+}
+
+/* ================= MOBILE ================= */
+
+@media (max-width: 900px) {
+
+  .initiative-header h1 {
+    font-size: 34px;
+  }
+
+  .initiative-subtitle {
+    font-size: 14px;
+  }
+
+  .initiative-cards {
+    grid-template-columns: 1fr;
+  }
+
+  .initiative-section h2 {
+    font-size: 26px;
+  }
+}
+
+
+
+
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.5);
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.modal-box {
+  background: #fff;
+  padding: 30px;
+  border-radius: 12px;
+  width: 800px;
+  max-width: 90%;
+  position: relative;
+}
+
+.close-btn {
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  font-size: 24px;
+  cursor: pointer;
+}
+
+.initiative-card img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  border-radius: 10px;
+  margin-bottom: 12px;
+}
+
+.event-date {
+  font-size: 14px;
+  color: #777;
+  margin-bottom: 4px;
+}
+
+.event-language {
+  font-size: 14px;
+  color: var(--green-accent);
+  font-weight: 600;
+  margin-bottom: 8px;
+}
+
+.events-btn-row {
+  display: flex;
+  justify-content: flex-end;
+  margin: 10px 20px 0;
+}

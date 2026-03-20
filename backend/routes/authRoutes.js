@@ -26,7 +26,8 @@ router.post("/register", async (req, res) => {
       zip,
       state,
       gender,
-      password
+      password,
+       mode 
     } = req.body;
 
     // Check if user already exists
@@ -58,7 +59,8 @@ router.post("/register", async (req, res) => {
       zip,
       state,
       gender,
-      password: hashedPassword
+      password: hashedPassword,
+       mode 
     });
 
     await newUser.save();

@@ -194,7 +194,76 @@ const choreographersTeam = [
 ];
 
 
+const vistaEvents = [
+  {
+    id: 8,
+    title: "Hindi Monologue Fest4",
+    date: "08 Jan 2026",
+    description: "Expressive Hindi monologues4.",
+    language: "Marathi",
+    image: e8,
+  },
 
-export { eventData, musicTeam, choreographersTeam };
+  {
+    id: 1,
+    title: "Marathi Natak",
+    date: "20 Feb 2026",
+    description: "A powerful Marathi theatre performance.",
+    language: "Marathi",
+    image: e1,
+  },
+  {
+    id: 2,
+    title: "Hindi Rangmanch",
+    date: "25 Feb 2026",
+    description: "Celebrating Hindi drama and storytelling.",
+    language: "Hindi",
+    image: e2,
+  },
+  {
+    id: 3,
+    title: "English Play Night",
+    date: "01 Mar 2026",
+    description: "A modern English stage performance.",
+    language: "English",
+    image: e3,
+  },
+  {
+    id: 4,
+    title: "Classic Marathi Drama",
+    date: "10 Jan 2026",
+    description: "A traditional Marathi theatre experience.",
+    language: "Marathi",
+    image: e4,
+  },
+  {
+    id: 5,
+    title: "Hindi Monologue Fest",
+    date: "05 Jan 2026",
+    description: "Expressive Hindi monologues.",
+    language: "Hindi",
+    image: e5,
+  },
+  
+];
+
+const wwiiEvents = [
+  {
+    id: 1,
+    title: "Cultural Awareness Drive",
+    description: "Promoting cultural unity through events.",
+    type: "wwii"
+  },
+  {
+    id: 2,
+    title: "Community Engagement Program",
+    description: "Encouraging youth participation.",
+    type: "wwii"
+  }
+];
+
+
+
+export { eventData, musicTeam, choreographersTeam, vistaEvents, wwiiEvents,  };
 
 

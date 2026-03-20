@@ -11,6 +11,8 @@ import DanceCompetition from "./pages/DanceCompetition";
 import InstrumentCompetition from "./pages/InstrumentCompetition";
 import MyHistory from "./pages/MyHistory";
 import EventDetails1 from "./pages/EventDetails1";
+import Vista from "./pages/Vista";
+import WWII from "./pages/WWII";
 
 function App() {
   return (
@@ -27,6 +29,8 @@ function App() {
         <Route path="/competition/instrumental" element={<InstrumentCompetition />} />
         <Route path="/my-history" element={<MyHistory />} />
          <Route path="/events/:id" element={<EventDetails1 />} />
+         <Route path="/initiatives/vista" element={<Vista />} />
+         <Route path="/initiatives/wwii" element={<WWII />} />
 
       </Routes>
       <Footer />

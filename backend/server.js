@@ -38,3 +38,20 @@ const PORT = process.env.PORT || 5000;
 app.listen(PORT, () => {
   console.log(`Server running on port ${PORT} `);
 });
+
+
+app.get("/fix-mode", async (req, res) => {
+  try {
+    const { User } = require("./models/User");
+
+    const result = await User.updateMany(
+      { mode: { $exists: false } },
+      { $set: { mode: "Offline" } }
+    );
+
+    res.send(`Updated users: ${result.modifiedCount}`);
+  } catch (err) {
+    console.error(err);
+    res.send("Error updating users");
+  }
+});

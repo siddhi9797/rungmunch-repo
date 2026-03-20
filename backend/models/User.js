@@ -1,6 +1,3 @@
-
-const mongoose = require("mongoose");
-// models/User.js
 const userSchema = new mongoose.Schema({
   firstName: { type: String, required: true },
   lastName: { type: String, required: true },
@@ -9,17 +6,23 @@ const userSchema = new mongoose.Schema({
   email: { type: String, required: true, unique: true },
   country: { type: String, required: true },
   mobile: { type: String, required: true },
-  contactPreference: { type: [String], required: true }, // array for SMS / WhatsApp
+  contactPreference: { type: [String], required: true },
   category: { type: String, required: true },
-  style: { type: String, required: true }, // if applicable
+  style: { type: String, required: true },
   participantsCount: { type: Number, required: true },
   ageGroup: { type: String, required: true },
   address: { type: String, required: true },
   city: { type: String, required: true },
   zip: { type: String, required: true },
   state: { type: String, required: true },
-  gender: { type: String, required: true },
-  password: { type: String, required: true }
+gender: { type: String, required: true },
+
+mode: {
+  type: String,
+  required: true,
+  enum: ["Offline", "Virtual"]
+},
+password: { type: String, required: true }
 }, { timestamps: true });
 
 
