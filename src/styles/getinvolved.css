@@ -1,119 +1,179 @@
+@import url('https://fonts.googleapis.com/css2?family=Public+Sans:wght@300;400;500;600;700;800&display=swap');
 
+:root {
+  --text-dark: #1a1a1a;
+  --text-light: #ffffff;
+  --green-main: #e6f3eb;
+  --green-dark: #2e1b40;
+  --green-accent: #02a95c;
+}
 
+/* ================= PAGE ================= */
 
 .getinvolved-page {
   background-color: #ffffff;
   min-height: 100vh;
-  padding-top: 100px;
+  padding-top: 90px;
   padding-bottom: 80px;
-  font-family: Arial, sans-serif;
-  overflow-x: hidden; 
+  font-family: 'Public Sans', sans-serif;
+  overflow-x: hidden;
 }
+
+/* ================= HEADER ================= */
 
 .getinvolved-banner {
   text-align: center;
-  background-color: #3c5671;
-  padding: 80px 20px 50px; 
+
+  background: linear-gradient(
+    180deg,
+    #e6f3eb,
+    #cce8d6,
+    #99d0b0,
+    #66b388
+  );
+
+  padding: 40px 20px 60px;
+  position: relative;
+  border-bottom: 1px solid #e6f3eb;
 }
 
+
+
 .getinvolved-banner h1 {
-  font-size: 38px;
-  color: #ffffff;
-  font-weight: bold;
+  font-size: 52px;
+  font-weight: 700;
+  color: var(--green-dark);
   margin: 0;
+  position: relative;
+  z-index: 2;
 }
 
 .getinvolved-banner p {
-  font-size: 17px;
-  color: #e0d6ff;
-  margin-top: 10px;
+  font-size: 18px;
+  color: #555;
+  margin-top: 12px;
+  position: relative;
+  z-index: 2;
 }
 
+/* ================= CONTENT ================= */
 
-/* CONTENT */
 .getinvolved-content {
   max-width: 1300px;
-  margin: 70px auto 0;
+  margin: 90px auto 0;
   padding: 0 20px;
 }
 
-/* WHY JOIN */
+/* ================= WHY JOIN ================= */
+
+.why-join {
+  text-align: center;
+  margin-bottom: 60px;
+}
+
 .why-join h2 {
-  color: #2a1740;
-  font-size: 32px;
-  margin-bottom: 15px;
-  text-align: left;
+  color: var(--green-dark);
+  font-size: 34px;
+  margin-bottom: 18px;
 }
 
 .why-join p {
   color: #444;
-  max-width: 100%;
-  line-height: 1.7;
-  margin-bottom: 50px;
+  max-width: 900px;
+  margin: auto;
+  line-height: 1.8;
+  font-size: 17px;
 }
 
-/* CARDS */
+/* ================= CARDS ================= */
+
 .involve-cards {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 55px;
+  gap: 35px;
 }
 
 .involve-card {
-  background-color: #f7f5ff;
-  padding: 30px 25px;
+  background: #ffffff;
+
+  padding: 35px 28px;
   border-radius: 14px;
   text-align: center;
-  box-shadow: 0 8px 20px rgba(0,0,0,0.1);
-  transition: transform 0.3s ease;
+
+  box-shadow:
+    0 6px 16px rgba(0, 0, 0, 0.08),
+    0 12px 28px rgba(0, 0, 0, 0.10);
+
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .involve-card:hover {
   transform: translateY(-8px);
+
+  box-shadow:
+    0 10px 24px rgba(0, 0, 0, 0.10),
+    0 18px 40px rgba(0, 0, 0, 0.14);
 }
 
 .involve-card img {
-  width: 70px;
-  margin-bottom: 20px;
+  width: 75px;
+  margin-bottom: 22px;
 }
 
 .involve-card h3 {
-  color: #2a1740;
-  margin-bottom: 15px;
+  color: var(--green-dark);
+  margin-bottom: 16px;
+  font-size: 24px;
+  font-weight: 700;
 }
 
 .involve-card p {
   color: #555;
-  line-height: 1.6;
-  margin-bottom: 25px;
+  line-height: 1.7;
+  margin-bottom: 28px;
+  font-size: 15px;
 }
 
-/* BUTTON */
+/* ================= BUTTON ================= */
+
 .action-btn {
   display: inline-block;
-  padding: 12px 22px;
-  background-color: #a569ff;
+  padding: 12px 24px;
+
+  background: linear-gradient(
+    180deg,
+    rgba(2,169,92,0.95),
+    rgba(1,120,65,0.95)
+  );
+
   color: #ffffff;
   text-decoration: none;
-  border-radius: 6px;
-  font-weight: bold;
+  border-radius: 30px;
+  font-weight: 600;
+
+  transition: all 0.3s ease;
 }
 
 .action-btn:hover {
-  background-color: #8b4de6;
+  transform: scale(1.05);
+
+  background: linear-gradient(
+    180deg,
+    rgba(2,169,92,1),
+    rgba(1,120,65,1)
+  );
 }
 
-/* ================= MOBILE RESPONSIVE ================= */
+/* ================= MOBILE ================= */
 
 @media (max-width: 900px) {
 
-  /* Banner */
   .getinvolved-banner {
-    padding: 60px 20px 40px;
+    padding: 35px 20px 55px;
   }
 
   .getinvolved-banner h1 {
-    font-size: 26px;
+    font-size: 34px;
     line-height: 1.3;
   }
 
@@ -121,33 +181,29 @@
     font-size: 14px;
   }
 
-  /* Why Join Section */
   .why-join h2 {
-    font-size: 24px;
-    text-align: center;
+    font-size: 28px;
   }
 
   .why-join p {
-    font-size: 14px;
-    text-align: center;
+    font-size: 15px;
   }
 
-  /* Cards */
   .involve-cards {
     grid-template-columns: 1fr;
     gap: 25px;
   }
 
   .involve-card {
-    padding: 25px 18px;
+    padding: 28px 20px;
   }
 
   .involve-card img {
-    width: 60px;
+    width: 65px;
   }
 
   .involve-card h3 {
-    font-size: 18px;
+    font-size: 20px;
   }
 
   .involve-card p {
@@ -158,5 +214,4 @@
     width: 100%;
     padding: 12px 0;
   }
-
 }

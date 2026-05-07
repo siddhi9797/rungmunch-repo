@@ -13,6 +13,7 @@ import MyHistory from "./pages/MyHistory";
 import EventDetails1 from "./pages/EventDetails1";
 import Vista from "./pages/Vista";
 import WWII from "./pages/WWII";
+import AdminPage from "./pages/AdminPage";
 
 function App() {
   return (
@@ -31,7 +32,7 @@ function App() {
          <Route path="/events/:id" element={<EventDetails1 />} />
          <Route path="/initiatives/vista" element={<Vista />} />
          <Route path="/initiatives/wwii" element={<WWII />} />
-
+         <Route path="/admin" element={<AdminPage />} />
       </Routes>
       <Footer />
     </BrowserRouter>

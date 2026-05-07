@@ -67,10 +67,10 @@ import "../styles/aboutus.css";
 import aboutIcon from "../assets/who.png";
 import aboutimg from "../assets/objective1.jpg";
 import whatwedo from "../assets/whatwedo.png";
-import start from "../assets/start.png";
-import event from "../assets/event.png";
-import expand from "../assets/expand.png";
-import community from "../assets/community.png";
+/* import start from "../assets/start.png";
+ import event from "../assets/event.png";
+ import expand from "../assets/expand.png";
+ import community from "../assets/community.png"; */
 import artistsicon from "../assets/artistsicon.png";
 import eventsicon from "../assets/eventsicon.png";
 import audienceicon from "../assets/audienceicon.png";
@@ -149,7 +149,7 @@ function AboutUs() {
   </div>
 </div>
 
-
+{/*
 <div className="journey-section">
   <h2 className="journey-title">Our Journey</h2>
 
@@ -185,8 +185,8 @@ function AboutUs() {
 
   </div>
 </div>
+*/}
 
-{/* OUR TEAM SECTION */}
 <div className="our-team">
   <h2>Our Team</h2>
 
