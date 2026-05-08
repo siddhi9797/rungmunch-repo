@@ -1,7 +1,6 @@
 /* @tailwind base;
 @tailwind components;
-@tailwind utilities;
-*/
+@tailwind utilities; */
 
 @import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600;700;800&family=Oswald:wght@400;500;600;700&display=swap');
 
@@ -18,7 +17,8 @@
   box-sizing: border-box;
 }
 
-html, body {
+html,
+body {
   max-width: 100%;
   overflow-x: hidden;
   font-family: 'DM Sans', sans-serif;
@@ -52,6 +52,7 @@ body {
   );
   padding: 40px 0 60px;
   border-bottom: 1px solid #e6f3eb;
+  position: relative;
 }
 
 .about-header::after {
@@ -125,7 +126,7 @@ body {
   height: 480px;
   object-fit: cover;
   border-radius: 10px;
-  box-shadow: 0 10px 28px rgba(0,0,0,0.08);
+  box-shadow: 0 10px 28px rgba(0, 0, 0, 0.08);
 }
 
 /* WHAT WE DO SECTION */
@@ -138,18 +139,20 @@ body {
   padding: 40px;
   background-color: #ffffff;
   border-radius: 10px;
-  box-shadow: 
+  box-shadow:
     0 4px 12px rgba(0, 0, 0, 0.06),
     0 8px 24px rgba(0, 0, 0, 0.08);
   gap: 50px;
   font-family: 'DM Sans', sans-serif;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
 }
 
 .what-we-do:hover {
   transform: translateY(-6px);
-  box-shadow: 
-    0 8px 20px rgba(0, 0, 0, 0.08), 
+  box-shadow:
+    0 8px 20px rgba(0, 0, 0, 0.08),
     0 12px 28px rgba(0, 0, 0, 0.12);
 }
 
@@ -189,12 +192,12 @@ body {
   margin-top: 0;
   padding: 100px 0 160px;
   text-align: center;
- background: linear-gradient(
-  180deg,
-  #fff7dc,
-  #fff2c2,
-  #ffe88f
-);
+  background: linear-gradient(
+    180deg,
+    #fff7dc,
+    #fff2c2,
+    #ffe88f
+  );
   border-bottom-left-radius: 100% 200px;
   border-bottom-right-radius: 100% 200px;
   position: relative;
@@ -251,7 +254,7 @@ body {
   background: #ffffff;
   padding: 8px;
   border-radius: 50%;
-  box-shadow: 0 6px 14px rgba(0,0,0,0.15);
+  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.15);
 }
 
 .journey-dot {
@@ -295,21 +298,19 @@ body {
 .team-member {
   text-align: center;
   background-color: #f8f9fb;
-
   padding: 35px 25px;
   border-radius: 10px;
-
-  box-shadow: 
+  box-shadow:
     0 6px 16px rgba(0, 0, 0, 0.08),
     0 12px 28px rgba(0, 0, 0, 0.10);
-
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
 }
 
 .team-member:hover {
   transform: translateY(-6px);
-
-  box-shadow: 
+  box-shadow:
     0 8px 20px rgba(0, 0, 0, 0.08),
     0 12px 28px rgba(0, 0, 0, 0.12);
 }
@@ -320,6 +321,7 @@ body {
   border-radius: 50%;
   object-fit: cover;
   margin-bottom: 15px;
+  transition: transform 0.3s ease;
 }
 
 .team-member img:hover {
@@ -350,7 +352,9 @@ body {
   width: 22px;
   height: 22px;
   cursor: pointer;
-  transition: transform 0.2s ease, opacity 0.2s ease;
+  transition:
+    transform 0.2s ease,
+    opacity 0.2s ease;
 }
 
 .team-socials img:hover {
@@ -375,13 +379,13 @@ body {
   text-align: center;
   padding: 35px 20px;
   border-radius: 10px;
-
   box-shadow:
     0 6px 16px rgba(0, 0, 0, 0.08),
     0 12px 32px rgba(0, 0, 0, 0.10),
     0 2px 4px rgba(0, 0, 0, 0.05);
-
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
 }
 
 .impact-card img {
@@ -406,7 +410,6 @@ body {
 
 .impact-card:hover {
   transform: translateY(-8px);
-
   box-shadow:
     0 10px 24px rgba(0, 0, 0, 0.10),
     0 18px 40px rgba(0, 0, 0, 0.14),
@@ -467,19 +470,16 @@ body {
 }
 
 @media (max-width: 900px) {
-
   .what-we-do {
     flex-direction: column;
     margin: 40px 16px;
     padding: 25px;
     gap: 25px;
   }
-
 }
 
 @media (max-width: 900px) {
-
- .about-card {
+  .about-card {
     flex-direction: column;
     margin: 40px 16px;
     padding: 0;
@@ -500,24 +500,19 @@ body {
 }
 
 @media (max-width: 900px) {
-
   .our-team {
     padding: 0 16px;
   }
-
 }
 
 @media (max-width: 900px) {
-
   .impact-section {
     grid-template-columns: repeat(2, 1fr);
     padding: 0 16px 40px;
   }
-
 }
 
 @media (max-width: 500px) {
-
   .team-grid {
     grid-template-columns: 1fr;
   }
@@ -533,5 +528,4 @@ body {
   .journey-title {
     font-size: 28px;
   }
-
 }

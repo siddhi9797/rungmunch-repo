@@ -23,9 +23,13 @@ function ImageSlider() {
 
       {/* Overlay */}
       <div className="slider-overlay">
-        <h1>Welcome to Rungmunch</h1>
-        <p>A space where theatre meets community</p>
-      </div>
+  <h1 className="welcome-title">
+    <span>Welcome to</span>
+    Rungmunch
+  </h1>
+
+  <p>A space where theatre meets community</p>
+</div>
     </div>
   );
 }

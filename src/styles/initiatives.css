@@ -1,11 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Public+Sans:wght@300;400;500;600;700;800&display=swap');
-
-html,
-body,
-.page,
-.page * {
-  font-family: 'Public Sans', sans-serif !important;
-}
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600;700;800&family=Oswald:wght@400;500;600;700&display=swap');
 
 :root {
   --text-dark: #1a1a1a;
@@ -19,13 +12,15 @@ body,
   --gfm-green-light: #e6f7ef;
   --gfm-green-deep: #2e1b40;
 }
+
+
 /* ================= COMMON INITIATIVES PAGE ================= */
 
 .page {
   min-height: 100vh;
   background: #ffffff;
   padding-top: 90px;
-  font-family: 'Public Sans', sans-serif;
+  font-family: 'DM Sans', sans-serif;
 }
 
 /* ================= HEADER ================= */
@@ -49,14 +44,14 @@ body,
   color: var(--green-dark);
   letter-spacing: -0.5px;
   margin: 0;
-  font-family: 'Public Sans', sans-serif;
+  font-family: 'Oswald', sans-serif;
 }
 
 .initiative-subtitle {
   font-size: 18px;
   color: #555;
   margin-top: 12px;
-  font-family: 'Public Sans', sans-serif;
+  font-family: 'DM Sans', sans-serif;
 }
 
 /* ================= BUTTON ================= */
@@ -70,7 +65,7 @@ body,
   cursor: pointer;
   font-weight: 600;
   transition: 0.3s ease;
-  font-family: 'Public Sans', sans-serif;
+  font-family: 'DM Sans', sans-serif;
 }
 
 .initiative-btn:hover {
@@ -90,7 +85,7 @@ body,
   font-size: 32px;
   color: var(--green-dark);
   margin-bottom: 20px;
-  font-family: 'Public Sans', sans-serif;
+  font-family: 'Oswald', sans-serif;
 }
 
 /* ================= ROADMAP ================= */
@@ -123,7 +118,7 @@ body,
   margin: 0 auto;
   position: relative;
   z-index: 2;
-  font-family: 'Public Sans', sans-serif;
+  font-family: 'Oswald', sans-serif;
 }
 
 .step-box {
@@ -131,6 +126,7 @@ body,
   background: #fff;
   padding: 18px 20px;
   border-radius: 12px;
+
   width: 200px;
 
   box-shadow:
@@ -158,13 +154,13 @@ body,
   font-size: 18px;
   color: var(--green-dark);
   margin-bottom: 8px;
-  font-family: 'Public Sans', sans-serif;
+  font-family: 'Oswald', sans-serif;
 }
 
 .step-box p {
   font-size: 14px;
   color: #555;
-  font-family: 'Public Sans', sans-serif;
+  font-family: 'DM Sans', sans-serif;
 }
 
 /* ================= CARDS ================= */
@@ -207,13 +203,13 @@ body,
   font-size: 20px;
   margin-bottom: 10px;
   color: var(--green-dark);
-  font-family: 'Public Sans', sans-serif;
+  font-family: 'Oswald', sans-serif;
 }
 
 .initiative-card p {
   font-size: 15px;
   color: #555;
-  font-family: 'Public Sans', sans-serif;
+  font-family: 'DM Sans', sans-serif;
 }
 
 /* ================= UPLOAD SECTION ================= */
@@ -226,7 +222,7 @@ body,
   max-width: 500px;
   text-align: center;
   transition: 0.3s;
-  font-family: 'Public Sans', sans-serif;
+  font-family: 'DM Sans', sans-serif;
 }
 
 .upload-box:hover {
@@ -244,7 +240,7 @@ body,
   font-size: 14px;
   color: #777;
   margin-bottom: 4px;
-  font-family: 'Public Sans', sans-serif;
+  font-family: 'DM Sans', sans-serif;
 }
 
 .event-language {
@@ -252,7 +248,7 @@ body,
   color: var(--green-accent);
   font-weight: 600;
   margin-bottom: 8px;
-  font-family: 'Public Sans', sans-serif;
+  font-family: 'DM Sans', sans-serif;
 }
 
 .events-btn-row {
@@ -305,7 +301,7 @@ body,
 .competition-section h2 {
   margin-bottom: 30px;
   font-size: 28px;
-  font-family: 'Public Sans', sans-serif;
+  font-family: 'Oswald', sans-serif;
 }
 
 .competition-cards {
@@ -337,7 +333,7 @@ body,
 
 .competition-card h3 {
   color: var(--gfm-green-deep);
-  font-family: 'Public Sans', sans-serif;
+  font-family: 'Oswald', sans-serif;
 }
 
 /* ================= WWII HERO ================= */
@@ -355,7 +351,7 @@ body,
   color: #000000;
   margin-bottom: 10px;
   animation: slideDown 1s ease;
-  font-family: 'Public Sans', sans-serif;
+  font-family: 'Oswald', sans-serif;
 }
 
 .wwii-title span {
@@ -364,7 +360,7 @@ body,
   font-weight: 500;
   color: var(--gfm-green-main);
   margin-top: 8px;
-  font-family: 'Public Sans', sans-serif;
+  font-family: 'Oswald', sans-serif;
 }
 
 .wwii-tagline {
@@ -373,7 +369,7 @@ body,
   color: var(--gfm-green-dark);
   margin-bottom: 30px;
   animation: fadeIn 1.5s ease;
-  font-family: 'Public Sans', sans-serif;
+  font-family: 'Oswald', sans-serif;
 }
 
 .wwii-content {
@@ -388,6 +384,7 @@ body,
   background: var(--gfm-green-light);
   padding: 16px 20px;
   border-radius: 10px;
+
   font-size: 16px;
   line-height: 1.7;
   color: var(--gfm-green-deep);
@@ -399,7 +396,7 @@ body,
   opacity: 0;
   animation: slideUp 0.8s ease forwards;
 
-  font-family: 'Public Sans', sans-serif;
+  font-family: 'DM Sans', sans-serif;
 }
 
 .wwii-content p:nth-child(1) { animation-delay: 0.3s; }
@@ -411,7 +408,20 @@ body,
 
 .page,
 .page * {
-  font-family: 'Public Sans', sans-serif;
+  font-family: 'DM Sans', sans-serif;
+}
+
+.page-header h1,
+.initiative-section h2,
+.step-box h3,
+.initiative-card h3,
+.competition-section h2,
+.competition-card h3,
+.wwii-title,
+.wwii-title span,
+.wwii-tagline,
+.circle {
+  font-family: 'Oswald', sans-serif;
 }
 
 /* ================= ANIMATIONS ================= */

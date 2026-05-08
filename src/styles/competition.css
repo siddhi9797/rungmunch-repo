@@ -1,32 +1,61 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600;700;800&family=Oswald:wght@400;500;600;700&display=swap');
+
+:root {
+  --text-dark: #1a1a1a;
+  --text-light: #ffffff;
+
+  --green-main: #e6f3eb;
+  --green-dark: #2e1b40;
+  --green-accent: #02a95c;
+
+  --card-bg: #f8f9fb;
+  --soft-green: #cce8d6;
+  --light-green: #99d0b0;
+}
+
 /* PAGE */
+
 .music-page {
   background-color: #ffffff;
   min-height: 100vh;
   padding-top: 100px;
   padding-bottom: 80px;
-  font-family: Arial, sans-serif;
+  font-family: 'DM Sans', sans-serif;
 }
 
 /* HEADER */
+
 .music-banner {
   text-align: center;
-  background-color: #3c5671;
-  padding: 80px 0 50px;
+
+  background: linear-gradient(
+    180deg,
+    #e6f3eb,
+    #cce8d6,
+    #99d0b0,
+    #66b388
+  );
+
+  padding: 80px 20px 50px;
+  border-bottom: 1px solid #e6f3eb;
 }
 
 .music-banner h1 {
-  font-size: 38px;
-  color: #ffffff;
+  font-size: 42px;
+  color: var(--green-dark);
   margin: 0;
+  font-family: 'Oswald', sans-serif;
 }
 
 .music-banner p {
   font-size: 17px;
-  color: #e0d6ff;
+  color: #555;
   margin-top: 10px;
+  font-family: 'DM Sans', sans-serif;
 }
 
 /* CARDS */
+
 .music-cards {
   max-width: 1200px;
   margin: 80px auto;
@@ -36,16 +65,16 @@
   padding: 0 20px;
 }
 
+/* First row */
 
-
-/* First row: 3 cards */
 .music-card:nth-child(1),
 .music-card:nth-child(2),
 .music-card:nth-child(3) {
   grid-column: span 2;
 }
 
-/* Second row: centered 2 cards */
+/* Second row */
+
 .music-card:nth-child(4) {
   grid-column: 2 / span 2;
 }
@@ -54,15 +83,27 @@
   grid-column: 4 / span 2;
 }
 
-
-
-
 .music-card {
-  background: #f7f5ff;
+  background: #f8f9fb;
+
   padding: 30px 20px;
   border-radius: 14px;
   text-align: center;
-  box-shadow: 0 8px 18px rgba(0,0,0,0.1);
+
+  box-shadow:
+    0 6px 16px rgba(0,0,0,0.08),
+    0 12px 28px rgba(0,0,0,0.10),
+    0 2px 6px rgba(0,0,0,0.04);
+
+  transition: all 0.3s ease;
+}
+
+.music-card:hover {
+  transform: translateY(-8px);
+
+  box-shadow:
+    0 10px 24px rgba(0,0,0,0.10),
+    0 18px 40px rgba(0,0,0,0.14);
 }
 
 .music-card img {
@@ -71,31 +112,50 @@
 }
 
 .music-card h3 {
-  color: #2a1740;
+  color: var(--green-dark);
   margin-bottom: 12px;
+  font-family: 'Oswald', sans-serif;
 }
 
 .music-card p {
   color: #555;
   margin-bottom: 25px;
+  font-family: 'DM Sans', sans-serif;
 }
 
 /* BUTTON */
-.music-card button {
+
+.music-card button,
+.register-btn {
   padding: 12px 22px;
   border: none;
-  background-color: black;
+
+  background: linear-gradient(
+    180deg,
+    rgba(2,169,92,1),
+    rgba(1,120,65,1)
+  );
+
   color: white;
   border-radius: 25px;
   cursor: pointer;
+
+  font-family: 'DM Sans', sans-serif;
+  font-weight: 600;
+
+  transition: 0.3s ease;
 }
 
-.music-card button:hover {
-  background-color: #333;
+.music-card button:hover,
+.register-btn:hover {
+  transform: translateY(-2px);
+
+  box-shadow:
+    0 8px 18px rgba(0,0,0,0.12);
 }
 
 /* MODAL */
-/* MODAL FIX */
+
 .modal-overlay {
   position: fixed;
   top: 0;
@@ -110,195 +170,90 @@
 }
 
 .modal-box {
-  background: #fff;
+  background: #ffffff;
   width: 90%;
   max-width: 1000px;
   max-height: 80vh;
   overflow-y: auto;
-  padding: 60px 40px 40px; /* 👈 TOP PADDING FIX */
-  border-radius: 12px;
+
+  padding: 60px 40px 40px;
+  border-radius: 14px;
+
   position: relative;
+
+  box-shadow:
+    0 10px 24px rgba(0,0,0,0.12),
+    0 18px 40px rgba(0,0,0,0.14);
+
+  font-family: 'DM Sans', sans-serif;
 }
+
 .modal-box h2 {
   margin-top: 0;
   text-align: center;
-  color: #000;
-  font-size: 26px;
-  position: relative;
-  z-index: 1;
+  color: var(--green-dark);
+  font-size: 28px;
+  font-family: 'Oswald', sans-serif;
 }
 
-
-
 /* LOCK BACKGROUND SCROLL */
+
 body.modal-open {
   overflow: hidden;
 }
 
 /* CLOSE BUTTON */
+
 .close-btn {
-   position: absolute;
+  position: absolute;
   top: 15px;
   right: 15px;
-  margin-left: auto;
+
   width: 36px;
   height: 36px;
-  background: #000;
+
+  background: linear-gradient(
+    180deg,
+    rgba(2,169,92,1),
+    rgba(1,120,65,1)
+  );
+
   color: #fff;
   border-radius: 50%;
+
   display: flex;
   align-items: center;
   justify-content: center;
+
   font-size: 22px;
   cursor: pointer;
+
   z-index: 100;
+
+  transition: 0.3s ease;
+}
+
+.close-btn:hover {
+  transform: rotate(90deg);
 }
 
 .timeline-item h4 {
-  color: #000;
+  color: var(--green-dark);
+  font-family: 'Oswald', sans-serif;
 }
 
 .timeline-item p {
   color: #333;
+  font-family: 'DM Sans', sans-serif;
 }
-
-/* RESPONSIVE */
-@media (max-width: 900px) {
-
-  /* CARDS STACK */
-  .music-cards {
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: 25px;
-  }
-
-  .music-card {
-    grid-column: unset !important;
-  }
-
-  /* Banner */
-  .music-banner {
-    padding: 60px 20px 40px;
-  }
-
-  .music-banner h1 {
-    font-size: 26px;
-  }
-
-  .music-banner p {
-    font-size: 14px;
-  }
-  /* TIMELINE MOBILE FIX */
-.timeline-container::before {
-  left: 50%;
-  transform: translateX(-50%);
-}
-
-.timeline-item {
-  width: 100%;
-  display: flex;
-}
-
-.timeline-item.left {
-  justify-content: flex-start;
-}
-
-.timeline-item.right {
-  justify-content: flex-end;
-}
-
-.timeline-item .content {
-  width: 44%;
-  font-size: 14px;
-}
-
-.timeline-item::before {
-  left: 50%;
-  transform: translateX(-50%);
-}
-
-/* MODAL MOBILE */
-.modal-box {
-  width: 95%;
-  padding: 50px 20px 30px;
-  max-height: 85vh;
-}
-
-.close-btn {
-  top: 10px;
-  right: 10px;
-}
-/* REGISTRATION MOBILE */
-.registration-form {
-  gap: 18px;
-}
-
-.form-row {
-  flex-direction: column;
-  gap: 15px;
-}
-
-.checkbox-row,
-.radio-row {
-  flex-direction: column;
-  align-items: flex-start;
-  gap: 10px;
-}
-
-.register-btn {
-  width: 100%;
-}
-/* REGISTRATION MOBILE */
-.registration-form {
-  gap: 18px;
-}
-
-.form-row {
-  flex-direction: column;
-  gap: 15px;
-}
-
-.checkbox-row,
-.radio-row {
-  flex-direction: column;
-  align-items: flex-start;
-  gap: 10px;
-}
-
-.register-btn {
-  width: 100%;
-}
-/* REGISTRATION MOBILE */
-.registration-form {
-  gap: 18px;
-}
-
-.form-row {
-  flex-direction: column;
-  gap: 15px;
-}
-
-.checkbox-row,
-.radio-row {
-  flex-direction: column;
-  align-items: flex-start;
-  gap: 10px;
-}
-
-.register-btn {
-  width: 100%;
-}
-
-}
-
 
 /* TIMELINE */
+
 .timeline-container {
   position: relative;
   margin: 30px 0;
   padding: 20px 0;
 }
-
 
 .timeline-container::before {
   content: "";
@@ -307,7 +262,7 @@ body.modal-open {
   top: 0;
   width: 4px;
   height: 100%;
-  background: #000;
+  background: var(--green-accent);
   transform: translateX(-50%);
 }
 
@@ -324,7 +279,7 @@ body.modal-open {
   left: 50%;
   width: 16px;
   height: 16px;
-  background: #000;
+  background: var(--green-accent);
   border-radius: 50%;
   transform: translateX(-50%);
   top: 25px;
@@ -340,20 +295,27 @@ body.modal-open {
 
 .timeline-item .content {
   width: 45%;
-  background: #f7f5ff;
+  background: #f8f9fb;
+
   padding: 20px;
   border-radius: 12px;
-  text-align: center;    
-  box-shadow: 0 6px 12px rgba(0,0,0,0.1);
+
+  text-align: center;
+
+  box-shadow:
+    0 6px 16px rgba(0,0,0,0.08);
+
   color: #000;
 }
 
-/* REGISTRATION FORM STYLES */
+/* REGISTRATION FORM */
+
 .modal-title {
   text-align: center;
   font-size: 26px;
-  color: #000;
+  color: var(--green-dark);
   margin-bottom: 30px;
+  font-family: 'Oswald', sans-serif;
 }
 
 .registration-form {
@@ -364,10 +326,11 @@ body.modal-open {
 
 .form-subtitle {
   font-size: 20px;
-  color: #2a1740;
+  color: var(--green-dark);
   border-bottom: 1px solid #ddd;
   padding-bottom: 8px;
   margin-top: 20px;
+  font-family: 'Oswald', sans-serif;
 }
 
 .form-row {
@@ -376,7 +339,6 @@ body.modal-open {
   flex-wrap: wrap;
 }
 
-/* ONLY text-like inputs */
 .registration-form input[type="text"],
 .registration-form input[type="email"],
 .registration-form input[type="tel"],
@@ -388,15 +350,8 @@ body.modal-open {
   border-radius: 8px;
   border: 1px solid #ccc;
   font-size: 14px;
+  font-family: 'DM Sans', sans-serif;
 }
-
-.registration-form input[type="checkbox"],
-.registration-form input[type="radio"] {
-  flex: unset;
-  width: auto;
-  margin: 0;
-}
-
 
 .registration-form textarea {
   resize: none;
@@ -413,46 +368,32 @@ body.modal-open {
 
 .checkbox-row label,
 .radio-row label {
-  color: #000 !important;
+  color: #000;
   font-size: 14px;
   display: flex;
   align-items: center;
   gap: 6px;
-  cursor: pointer;
 }
 
-.register-btn {
-  background: #000;
-  color: white;
-  border: none;
-  padding: 14px;
-  border-radius: 30px;
-  font-size: 16px;
-  cursor: pointer;
-  margin-top: 30px;
-}
-
-.register-btn:hover {
-  background: #333;
-}
-
-/* RADIO & CHECKBOX TITLES FIX */
-.radio-row > label:first-child,
-.checkbox-row > label:first-child {
-  font-weight: bold;
-  color: #000;
-  margin-right: 10px;
-}
-
-
-
+/* CATEGORY BOX */
 
 .category-box {
-  background: #f7f5ff;
+  background: #f8f9fb;
+
   padding: 20px;
-  border-radius: 12px;
+  border-radius: 14px;
+
   margin-bottom: 25px;
-  box-shadow: 0 6px 12px rgba(0,0,0,0.1);
+
+  box-shadow:
+    0 6px 16px rgba(0,0,0,0.08),
+    0 12px 28px rgba(0,0,0,0.10);
+
+  transition: 0.3s ease;
+}
+
+.category-box:hover {
+  transform: translateY(-4px);
 }
 
 .category-box img {
@@ -465,8 +406,9 @@ body.modal-open {
 
 .category-box h3 {
   text-align: center;
-  color: #2a1740;
+  color: var(--green-dark);
   margin-bottom: 10px;
+  font-family: 'Oswald', sans-serif;
 }
 
 .category-box p {
@@ -482,17 +424,15 @@ body.modal-open {
 }
 
 .category-box ul li {
-  background: #fff;
+  background: #ffffff;
   padding: 8px;
   border-radius: 6px;
   margin-bottom: 8px;
   text-align: center;
-  color: #000;
 }
 
+/* RULES */
 
-
-/* RULES MODAL */
 .rules-container {
   margin-top: 20px;
 }
@@ -502,34 +442,48 @@ body.modal-open {
 }
 
 .rule-header {
-  background: #f7f5ff;
+  background: #f8f9fb;
+
   padding: 14px 18px;
   border-radius: 10px;
+
   font-weight: bold;
   cursor: pointer;
-  color: #2a1740;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+
+  color: var(--green-dark);
+
+  box-shadow:
+    0 4px 10px rgba(0,0,0,0.08);
+
+  font-family: 'Oswald', sans-serif;
+
+  transition: 0.3s ease;
 }
 
 .rule-header:hover {
-  background: #ece8ff;
+  background: #eef7f1;
 }
 
 .rule-content {
   margin-top: 10px;
+
   background: #ffffff;
+
   padding: 15px 20px;
   border-radius: 8px;
+
   list-style: disc;
   color: #000;
+
+  border-left: 4px solid var(--green-accent);
 }
 
 .rule-content li {
   margin-bottom: 8px;
 }
 
+/* AV GUIDE */
 
-/* AV GUIDE MODAL */
 .av-guidelines {
   margin-top: 20px;
   color: #000;
@@ -547,4 +501,78 @@ body.modal-open {
 .av-guidelines li {
   margin-bottom: 10px;
   line-height: 1.5;
+}
+
+/* RESPONSIVE */
+
+@media (max-width: 900px) {
+
+  .music-cards {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 25px;
+  }
+
+  .music-card {
+    grid-column: unset !important;
+  }
+
+  .music-banner {
+    padding: 60px 20px 40px;
+  }
+
+  .music-banner h1 {
+    font-size: 30px;
+  }
+
+  .music-banner p {
+    font-size: 14px;
+  }
+
+  .timeline-container::before {
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  .timeline-item {
+    width: 100%;
+    display: flex;
+  }
+
+  .timeline-item.left {
+    justify-content: flex-start;
+  }
+
+  .timeline-item.right {
+    justify-content: flex-end;
+  }
+
+  .timeline-item .content {
+    width: 44%;
+    font-size: 14px;
+  }
+
+  .timeline-item::before {
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  .modal-box {
+    width: 95%;
+    padding: 50px 20px 30px;
+    max-height: 85vh;
+  }
+
+  .registration-form {
+    gap: 18px;
+  }
+
+  .form-row {
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  .register-btn {
+    width: 100%;
+  }
 }

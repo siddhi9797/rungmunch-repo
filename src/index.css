@@ -3,7 +3,12 @@
 @tailwind utilities;
 */
 
-@import url('https://fonts.googleapis.com/css2?family=Public+Sans:wght@300;400;500;600;700;800&display=swap');
+/* @tailwind base;
+@tailwind components;
+@tailwind utilities;
+*/
+
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600;700;800&family=Oswald:wght@400;500;600;700&display=swap');
 
 :root {
   /* GoFundMe base palette */
@@ -30,14 +35,12 @@
   --text-light: #ffffff;
 }
 
-
-
-
 * {
   box-sizing: border-box;
 }
 
-html, body {
+html,
+body {
   max-width: 100%;
   overflow-x: hidden;
 }
@@ -50,16 +53,25 @@ body {
   margin: 0;
   background-color: var(--gfm-white);
   color: var(--text-dark);
-  font-family: 'Public Sans', sans-serif;
+  font-family: 'DM Sans', sans-serif;
 }
 
-h1, h2, h3, h4, h5 {
-  font-family: 'Public Sans', sans-serif;
-  font-weight: 700;
-  letter-spacing: 0.4px;
-  color: var(--text-dark);
-}
+/* ONLY FONT UPDATED */
 
+h1,
+h2,
+h3,
+h4,
+h5,
+.logo,
+.dropdown-title,
+.footer-contact h3,
+.slider-overlay h1,
+.objectives-title,
+.vmv-card h3,
+.objectives-content h3 {
+  font-family: 'Oswald', sans-serif;
+}
 
 
 
@@ -474,6 +486,83 @@ transition: transform 0.3s ease, color 0.3s ease;
   text-shadow: 0 2px 8px rgba(0,0,0,0.6);
   opacity: 0.85;
   font-family: 'Public Sans', sans-serif;
+}
+
+.welcome-title {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  font-family: 'Oswald', sans-serif;
+  font-size: 64px;
+  line-height: 1;
+  text-transform: uppercase;
+
+  color: #ffffff;
+
+  letter-spacing: 3px;
+
+  text-shadow:
+    0 4px 18px rgba(0,0,0,0.45);
+
+  animation: fadeZoom 1.2s ease;
+}
+
+.welcome-title span {
+  font-size: 22px;
+  font-weight: 400;
+  letter-spacing: 8px;
+
+  color: #d6f5e1;
+
+  margin-bottom: 10px;
+}
+
+.welcome-title::after {
+  content: "";
+  width: 140px;
+  height: 4px;
+
+  background: linear-gradient(
+    90deg,
+    transparent,
+    #00b14f,
+    transparent
+  );
+
+  margin-top: 14px;
+  border-radius: 20px;
+}
+
+@keyframes fadeZoom {
+  from {
+    opacity: 0;
+    transform: scale(0.9) translateY(30px);
+  }
+
+  to {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+}
+
+/* MOBILE */
+
+@media (max-width: 900px) {
+
+  .welcome-title {
+    font-size: 38px;
+    letter-spacing: 2px;
+  }
+
+  .welcome-title span {
+    font-size: 14px;
+    letter-spacing: 5px;
+  }
+
+  .welcome-title::after {
+    width: 90px;
+  }
 }
 
 .intro-section {
