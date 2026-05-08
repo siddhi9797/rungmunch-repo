@@ -1,4 +1,9 @@
-@import url('https://fonts.googleapis.com/css2?family=Public+Sans:wght@300;400;500;600;700;800&display=swap');
+/* @tailwind base;
+@tailwind components;
+@tailwind utilities;
+*/
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Oswald:wght@400;500;600;700&display=swap');
 
 :root {
   --text-dark: #1a1a1a;
@@ -15,7 +20,7 @@
   min-height: 100vh;
   padding-top: 90px;
   padding-bottom: 80px;
-  font-family: 'Public Sans', sans-serif;
+  font-family: 'Inter', sans-serif;
   overflow-x: hidden;
 }
 
@@ -37,8 +42,6 @@
   border-bottom: 1px solid #e6f3eb;
 }
 
-
-
 .getinvolved-banner h1 {
   font-size: 52px;
   font-weight: 700;
@@ -46,6 +49,9 @@
   margin: 0;
   position: relative;
   z-index: 2;
+
+  font-family: 'Oswald', sans-serif;
+  letter-spacing: 0.5px;
 }
 
 .getinvolved-banner p {
@@ -54,6 +60,8 @@
   margin-top: 12px;
   position: relative;
   z-index: 2;
+
+  font-family: 'Inter', sans-serif;
 }
 
 /* ================= CONTENT ================= */
@@ -75,6 +83,9 @@
   color: var(--green-dark);
   font-size: 34px;
   margin-bottom: 18px;
+
+  font-family: 'Oswald', sans-serif;
+  letter-spacing: 0.3px;
 }
 
 .why-join p {
@@ -83,6 +94,8 @@
   margin: auto;
   line-height: 1.8;
   font-size: 17px;
+
+  font-family: 'Inter', sans-serif;
 }
 
 /* ================= CARDS ================= */
@@ -94,7 +107,7 @@
 }
 
 .involve-card {
-  background: #ffffff;
+  background: #f8f9fb;
 
   padding: 35px 28px;
   border-radius: 14px;
@@ -105,6 +118,8 @@
     0 12px 28px rgba(0, 0, 0, 0.10);
 
   transition: transform 0.3s ease, box-shadow 0.3s ease;
+
+  font-family: 'Inter', sans-serif;
 }
 
 .involve-card:hover {
@@ -125,6 +140,9 @@
   margin-bottom: 16px;
   font-size: 24px;
   font-weight: 700;
+
+  font-family: 'Oswald', sans-serif;
+  letter-spacing: 0.3px;
 }
 
 .involve-card p {
@@ -132,6 +150,8 @@
   line-height: 1.7;
   margin-bottom: 28px;
   font-size: 15px;
+
+  font-family: 'Inter', sans-serif;
 }
 
 /* ================= BUTTON ================= */
@@ -151,6 +171,8 @@
   border-radius: 30px;
   font-weight: 600;
 
+  font-family: 'Inter', sans-serif;
+
   transition: all 0.3s ease;
 }
 
@@ -162,6 +184,9 @@
     rgba(2,169,92,1),
     rgba(1,120,65,1)
   );
+
+  box-shadow:
+    0 8px 18px rgba(0,0,0,0.12);
 }
 
 /* ================= MOBILE ================= */

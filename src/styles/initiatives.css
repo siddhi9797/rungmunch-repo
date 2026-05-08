@@ -1,10 +1,35 @@
+@import url('https://fonts.googleapis.com/css2?family=Public+Sans:wght@300;400;500;600;700;800&display=swap');
+
+html,
+body,
+.page,
+.page * {
+  font-family: 'Public Sans', sans-serif !important;
+}
+
+:root {
+  --text-dark: #1a1a1a;
+  --text-light: #ffffff;
+  --green-main: #e6f3eb;
+  --green-dark: #2e1b40;
+  --green-accent: #02a95c;
+
+  --gfm-green-main: #02a95c;
+  --gfm-green-dark: #017841;
+  --gfm-green-light: #e6f7ef;
+  --gfm-green-deep: #2e1b40;
+}
 /* ================= COMMON INITIATIVES PAGE ================= */
 
-/* HEADER (Same as About Page) */
-
 .page {
-    padding-top: 0;
+  min-height: 100vh;
+  background: #ffffff;
+  padding-top: 90px;
+  font-family: 'Public Sans', sans-serif;
 }
+
+/* ================= HEADER ================= */
+
 .page-header {
   text-align: center;
   background: linear-gradient(
@@ -14,34 +39,24 @@
     #99d0b0,
     #66b388
   );
-   padding: 20px 0 40px;
+  padding: 40px 20px 60px;
   border-bottom: 1px solid #e6f3eb;
-  position: relative; /* ✅ IMPORTANT */
 }
 
-/* ✅ ADD THIS */
-.page-header::after {
-  content: "";
-  position: absolute;
-  bottom: -70px;
-  left: 0;
-  width: 100%;
-  height: 140px;
-  background: #ffffff;
-  border-top-left-radius: 100% 140px;
-  border-top-right-radius: 100% 140px;
-  z-index: -1;
-}
-.initiative-header h1 {
+.page-header h1 {
   font-size: 52px;
   font-weight: 700;
   color: var(--green-dark);
   letter-spacing: -0.5px;
+  margin: 0;
+  font-family: 'Public Sans', sans-serif;
 }
+
 .initiative-subtitle {
   font-size: 18px;
   color: #555;
   margin-top: 12px;
+  font-family: 'Public Sans', sans-serif;
 }
 
 /* ================= BUTTON ================= */
@@ -55,6 +70,7 @@
   cursor: pointer;
   font-weight: 600;
   transition: 0.3s ease;
+  font-family: 'Public Sans', sans-serif;
 }
 
 .initiative-btn:hover {
@@ -74,23 +90,8 @@
   font-size: 32px;
   color: var(--green-dark);
   margin-bottom: 20px;
+  font-family: 'Public Sans', sans-serif;
 }
-
-/* ================= STEPS ================= */
-
-.initiative-steps {
-  list-style: none;
-  padding: 0;
-  max-width: 600px;
-  margin: 20px auto;
-}
-
-.initiative-steps li {
-  margin-bottom: 12px;
-  font-size: 17px;
-  color: #444;
-}
-
 
 /* ================= ROADMAP ================= */
 
@@ -108,7 +109,6 @@
   text-align: center;
 }
 
-/* Circle number */
 .circle {
   width: 60px;
   height: 60px;
@@ -121,11 +121,11 @@
   align-items: center;
   justify-content: center;
   margin: 0 auto;
-  z-index: 2;
   position: relative;
+  z-index: 2;
+  font-family: 'Public Sans', sans-serif;
 }
 
-/* Popup box */
 .step-box {
   margin-top: 15px;
   background: #fff;
@@ -141,42 +141,30 @@
   cursor: pointer;
 }
 
-/* Hover effect (interactive feel) */
 .step-box:hover {
   transform: translateY(-10px) scale(1.05);
+
   box-shadow:
     0 10px 24px rgba(0, 0, 0, 0.12),
     0 18px 36px rgba(0, 0, 0, 0.14);
 }
 
-/* Arrow */
 .arrow {
   font-size: 30px;
   color: var(--green-dark);
 }
 
-/* Text styling */
 .step-box h3 {
   font-size: 18px;
   color: var(--green-dark);
   margin-bottom: 8px;
+  font-family: 'Public Sans', sans-serif;
 }
 
 .step-box p {
   font-size: 14px;
   color: #555;
-}
-
-/* ================= MOBILE ================= */
-
-@media (max-width: 768px) {
-  .roadmap {
-    flex-direction: column;
-  }
-
-  .arrow {
-    transform: rotate(90deg);
-  }
+  font-family: 'Public Sans', sans-serif;
 }
 
 /* ================= CARDS ================= */
@@ -190,30 +178,45 @@
 }
 
 .initiative-card {
-  background: #ffffff;  
+  background: #ffffff;
   border-radius: 14px;
   padding: 20px;
+
   transition: 0.3s ease;
-  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.12);
+
+  box-shadow:
+    0 8px 25px rgba(0, 0, 0, 0.12);
 }
 
 .initiative-card:hover {
   transform: translateY(-6px);
-  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.18);
+
+  box-shadow:
+    0 15px 40px rgba(0, 0, 0, 0.18);
+}
+
+.initiative-card img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  border-radius: 10px;
+  margin-bottom: 12px;
 }
 
 .initiative-card h3 {
   font-size: 20px;
   margin-bottom: 10px;
   color: var(--green-dark);
+  font-family: 'Public Sans', sans-serif;
 }
 
 .initiative-card p {
   font-size: 15px;
   color: #555;
+  font-family: 'Public Sans', sans-serif;
 }
 
-/* ================= UPLOAD SECTION (FOR VISTA 🔥) ================= */
+/* ================= UPLOAD SECTION ================= */
 
 .upload-box {
   margin: 40px auto;
@@ -223,6 +226,7 @@
   max-width: 500px;
   text-align: center;
   transition: 0.3s;
+  font-family: 'Public Sans', sans-serif;
 }
 
 .upload-box:hover {
@@ -234,29 +238,30 @@
   margin-top: 10px;
 }
 
-/* ================= MOBILE ================= */
+/* ================= EVENT DETAILS ================= */
 
-@media (max-width: 900px) {
-
-  .initiative-header h1 {
-    font-size: 34px;
-  }
-
-  .initiative-subtitle {
-    font-size: 14px;
-  }
-
-  .initiative-cards {
-    grid-template-columns: 1fr;
-  }
-
-  .initiative-section h2 {
-    font-size: 26px;
-  }
+.event-date {
+  font-size: 14px;
+  color: #777;
+  margin-bottom: 4px;
+  font-family: 'Public Sans', sans-serif;
 }
 
+.event-language {
+  font-size: 14px;
+  color: var(--green-accent);
+  font-weight: 600;
+  margin-bottom: 8px;
+  font-family: 'Public Sans', sans-serif;
+}
 
+.events-btn-row {
+  display: flex;
+  justify-content: flex-end;
+  margin: 10px 20px 0;
+}
 
+/* ================= MODAL ================= */
 
 .modal-overlay {
   position: fixed;
@@ -289,35 +294,8 @@
   cursor: pointer;
 }
 
-.initiative-card img {
-  width: 100%;
-  height: 180px;
-  object-fit: cover;
-  border-radius: 10px;
-  margin-bottom: 12px;
-}
+/* ================= COMPETITION SECTION ================= */
 
-.event-date {
-  font-size: 14px;
-  color: #777;
-  margin-bottom: 4px;
-}
-
-.event-language {
-  font-size: 14px;
-  color: var(--green-accent);
-  font-weight: 600;
-  margin-bottom: 8px;
-}
-
-.events-btn-row {
-  display: flex;
-  justify-content: flex-end;
-  margin: 10px 20px 0;
-}
-
-
-/* Competition Section */
 .competition-section {
   max-width: 1200px;
   margin: 60px auto;
@@ -327,9 +305,9 @@
 .competition-section h2 {
   margin-bottom: 30px;
   font-size: 28px;
+  font-family: 'Public Sans', sans-serif;
 }
 
-/* Cards Layout */
 .competition-cards {
   display: flex;
   justify-content: center;
@@ -337,42 +315,47 @@
   flex-wrap: wrap;
 }
 
-/* Individual Card */
 .competition-card {
   width: 220px;
   padding: 30px;
   background: white;
   border-radius: 12px;
   cursor: pointer;
-  box-shadow: 0 15px 40px rgba(0,0,0,0.25); /* darker shadow */
+
+  box-shadow:
+    0 15px 40px rgba(0,0,0,0.25);
+
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .competition-card:hover {
   transform: translateY(-8px);
-  box-shadow: 0 25px 60px rgba(0,0,0,0.35); /* even deeper on hover */
+
+  box-shadow:
+    0 25px 60px rgba(0,0,0,0.35);
 }
 
 .competition-card h3 {
   color: var(--gfm-green-deep);
+  font-family: 'Public Sans', sans-serif;
 }
 
-/* ===== WWII HERO SECTION ===== */
+/* ================= WWII HERO ================= */
 
 .wwii-hero {
   text-align: center;
   padding: 40px 20px 40px;
-  margin-top: -20px; /* pulls hero closer to top */
+  margin-top: -20px;
   animation: fadeInHero 1s ease;
 }
 
-/* BIG TITLE */
 .wwii-title {
   font-size: 48px;
   font-weight: 800;
   color: #000000;
   margin-bottom: 10px;
   animation: slideDown 1s ease;
+  font-family: 'Public Sans', sans-serif;
 }
 
 .wwii-title span {
@@ -381,18 +364,18 @@
   font-weight: 500;
   color: var(--gfm-green-main);
   margin-top: 8px;
+  font-family: 'Public Sans', sans-serif;
 }
 
-/* TAGLINE */
 .wwii-tagline {
   font-size: 20px;
   font-weight: 600;
   color: var(--gfm-green-dark);
   margin-bottom: 30px;
   animation: fadeIn 1.5s ease;
+  font-family: 'Public Sans', sans-serif;
 }
 
-/* CONTENT */
 .wwii-content {
   max-width: 900px;
   margin: auto;
@@ -408,22 +391,30 @@
   font-size: 16px;
   line-height: 1.7;
   color: var(--gfm-green-deep);
-  
-  /* Darker shadow */
-  box-shadow: 0 8px 20px rgba(0,0,0,0.25);
+
+  box-shadow:
+    0 8px 20px rgba(0,0,0,0.25);
 
   transform: translateY(30px);
   opacity: 0;
   animation: slideUp 0.8s ease forwards;
+
+  font-family: 'Public Sans', sans-serif;
 }
 
-/* STAGGER ANIMATION */
 .wwii-content p:nth-child(1) { animation-delay: 0.3s; }
 .wwii-content p:nth-child(2) { animation-delay: 0.6s; }
 .wwii-content p:nth-child(3) { animation-delay: 0.9s; }
 .wwii-content p:nth-child(4) { animation-delay: 1.2s; }
 
-/* ===== ANIMATIONS ===== */
+/* ================= FORCE FONT FIX ================= */
+
+.page,
+.page * {
+  font-family: 'Public Sans', sans-serif;
+}
+
+/* ================= ANIMATIONS ================= */
 
 @keyframes fadeInHero {
   from {
@@ -453,6 +444,66 @@
 }
 
 @keyframes fadeIn {
-  from { opacity: 0; }
-  to { opacity: 1; }
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* ================= MOBILE ================= */
+
+@media (max-width: 900px) {
+
+  .page {
+    padding-top: 80px;
+  }
+
+  .page-header {
+    padding: 35px 20px 50px;
+  }
+
+  .page-header h1 {
+    font-size: 34px;
+  }
+
+  .initiative-subtitle {
+    font-size: 14px;
+  }
+
+  .initiative-cards {
+    grid-template-columns: 1fr;
+  }
+
+  .initiative-section h2 {
+    font-size: 26px;
+  }
+
+  .wwii-title {
+    font-size: 34px;
+  }
+
+  .wwii-title span {
+    font-size: 18px;
+  }
+
+  .wwii-tagline {
+    font-size: 16px;
+  }
+
+  .wwii-content p {
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 768px) {
+
+  .roadmap {
+    flex-direction: column;
+  }
+
+  .arrow {
+    transform: rotate(90deg);
+  }
 }
