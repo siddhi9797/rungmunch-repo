@@ -20,9 +20,10 @@ function AdminPage() {
 
   // ✅ FETCH EVENTS
   const fetchEvents = () => {
-    axios.get("http://localhost:5000/api/events")
-      .then(res => setEvents(res.data))
-      .catch(err => console.log(err));
+    axios
+      .get("https://rungmunch-backend.onrender.com/api/events")
+      .then((res) => setEvents(res.data))
+      .catch((err) => console.log(err));
   };
 
   useEffect(() => {
@@ -39,17 +40,34 @@ function AdminPage() {
     e.preventDefault();
 
     const data = new FormData();
-    Object.keys(form).forEach((key) => data.append(key, form[key]));
-    if (image) data.append("image", image);
+
+    Object.keys(form).forEach((key) => {
+      data.append(key, form[key]);
+    });
+
+    if (image) {
+      data.append("image", image);
+    }
 
     try {
       if (editId) {
-        // ✅ UPDATE
-        await axios.put(`http://localhost:5000/api/events/${editId}`, data);
+
+        // ✅ UPDATE EVENT
+        await axios.put(
+          `https://rungmunch-backend.onrender.com/api/events/${editId}`,
+          data
+        );
+
         alert("Event Updated ✅");
+
       } else {
-        // ✅ CREATE
-        await axios.post("http://localhost:5000/api/events/create", data);
+
+        // ✅ CREATE EVENT
+        await axios.post(
+          "https://rungmunch-backend.onrender.com/api/events/create",
+          data
+        );
+
         alert("Event Added ✅");
       }
 
@@ -64,12 +82,19 @@ function AdminPage() {
 
   // ================= DELETE =================
   const handleDelete = async (id) => {
+
     if (!window.confirm("Delete this event?")) return;
 
     try {
-      await axios.delete(`http://localhost:5000/api/events/${id}`);
+
+      await axios.delete(
+        `https://rungmunch-backend.onrender.com/api/events/${id}`
+      );
+
       alert("Deleted ✅");
+
       fetchEvents();
+
     } catch (err) {
       console.error(err);
     }
@@ -77,6 +102,7 @@ function AdminPage() {
 
   // ================= EDIT =================
   const handleEdit = (event) => {
+
     setForm({
       title: event.title,
       date: event.date,
@@ -86,11 +112,13 @@ function AdminPage() {
     });
 
     setEditId(event._id);
+
     setShowModal(true);
   };
 
   // RESET
   const resetForm = () => {
+
     setForm({
       title: "",
       date: "",
@@ -98,6 +126,7 @@ function AdminPage() {
       language: "English",
       type: "upcoming"
     });
+
     setImage(null);
     setEditId(null);
     setShowModal(false);
@@ -109,6 +138,7 @@ function AdminPage() {
       {/* SIDEBAR */}
       <div className="admin-sidebar">
         <h2 className="logo">Rungmunch</h2>
+
         <ul>
           <li className="active">Events</li>
         </ul>
@@ -119,90 +149,115 @@ function AdminPage() {
 
         <div className="events-header-admin">
           <h2>Events</h2>
-          <button onClick={() => setShowModal(true)}>+ Add Event</button>
+
+          <button onClick={() => setShowModal(true)}>
+            + Add Event
+          </button>
         </div>
 
-        {/* ✅ EVENTS LIST */}
+        {/* EVENTS LIST */}
         <div className="admin-events-grid">
+
           {events.map((event) => (
-           <div className="admin-event-card" key={event._id}>
-  <img src={event.image} alt="" />
 
-  <h3>{event.title}</h3>
-  <p className="event-date">{event.date}</p>
+            <div className="admin-event-card" key={event._id}>
 
-  {/* ✅ ADD THIS */}
-  <p className="event-desc">{event.description}</p>
+              <img src={event.image} alt="" />
 
-  <div className="admin-actions">
-    <button onClick={() => handleEdit(event)}>Edit</button>
-    <button onClick={() => handleDelete(event._id)}>Delete</button>
-  </div>
-</div>
+              <h3>{event.title}</h3>
+
+              <p className="event-date">{event.date}</p>
+
+              <p className="event-desc">{event.description}</p>
+
+              <div className="admin-actions">
+
+                <button onClick={() => handleEdit(event)}>
+                  Edit
+                </button>
+
+                <button onClick={() => handleDelete(event._id)}>
+                  Delete
+                </button>
+
+              </div>
+            </div>
           ))}
         </div>
-
       </div>
 
       {/* MODAL */}
       {showModal && (
         <div className="modal-overlay">
+
           <div className="modal-box">
 
-            <button className="close-btn" onClick={resetForm}>✖</button>
+            <button className="close-btn" onClick={resetForm}>
+              ✖
+            </button>
 
             <h2>{editId ? "Edit Event" : "Add Event"}</h2>
 
             <form onSubmit={handleSubmit} className="admin-form">
 
-             <input
-  type="text"
-  name="title"
-  placeholder="Event Title"
-  value={form.title}
-  onChange={handleChange}
-/>
+              <input
+                type="text"
+                name="title"
+                placeholder="Event Title"
+                value={form.title}
+                onChange={handleChange}
+              />
 
-<input
-  type="text"
-  name="date"
-  placeholder="Date (e.g. 01 Mar 2026)"
-  value={form.date}
-  onChange={handleChange}
-/>
+              <input
+                type="text"
+                name="date"
+                placeholder="Date (e.g. 01 Mar 2026)"
+                value={form.date}
+                onChange={handleChange}
+              />
 
-<textarea
-  name="description"
-  placeholder="Description"
-  value={form.description}
-  onChange={handleChange}
-/>
+              <textarea
+                name="description"
+                placeholder="Description"
+                value={form.description}
+                onChange={handleChange}
+              />
 
-<label>Language</label>
-<select name="language" value={form.language} onChange={handleChange}>
-  <option value="English">English</option>
-  <option value="Marathi">Marathi</option>
-  <option value="Hindi">Hindi</option>
-</select>
+              <label>Language</label>
 
-<label>Event Type</label>
-<select name="type" value={form.type} onChange={handleChange}>
-  <option value="upcoming">Upcoming</option>
-  <option value="past">Past</option>
-</select>
+              <select
+                name="language"
+                value={form.language}
+                onChange={handleChange}
+              >
+                <option value="English">English</option>
+                <option value="Marathi">Marathi</option>
+                <option value="Hindi">Hindi</option>
+              </select>
 
-<label>Upload Image</label>
-<input
-  type="file"
-  onChange={(e) => setImage(e.target.files[0])}
-/>
+              <label>Event Type</label>
+
+              <select
+                name="type"
+                value={form.type}
+                onChange={handleChange}
+              >
+                <option value="upcoming">Upcoming</option>
+                <option value="past">Past</option>
+              </select>
+
+              <label>Upload Image</label>
+
+              <input
+                type="file"
+                onChange={(e) => setImage(e.target.files[0])}
+              />
 
               <button type="submit">
                 {editId ? "Update Event" : "Add Event"}
               </button>
 
             </form>
-
           </div>
         </div>
       )}
