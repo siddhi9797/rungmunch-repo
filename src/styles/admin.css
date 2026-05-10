@@ -341,7 +341,8 @@ body {
   .admin-wrapper {
     display: flex;
     flex-direction: row;
-    align-items: flex-start;
+    align-items: stretch;
+    min-height: 100vh;
   }
 
   /* SIDEBAR */
@@ -353,6 +354,8 @@ body {
 
     position: sticky;
     top: 0;
+
+    align-self: stretch;
   }
 
   .admin-sidebar .logo {
@@ -443,10 +446,19 @@ body {
 
 @media (max-width: 480px) {
 
+  .admin-wrapper {
+    display: flex;
+    flex-direction: row;
+    align-items: stretch;
+    min-height: 100vh;
+  }
+
   .admin-sidebar {
     width: 115px;
 
     padding: 125px 10px 15px;
+
+    align-self: stretch;
   }
 
   .admin-sidebar .logo {
