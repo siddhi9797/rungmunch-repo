@@ -1,260 +1,47 @@
-/* import { Link, useNavigate } from "react-router-dom";
-import { useState, useEffect, useRef } from "react";
-import logo from "../assets/logo.png";
-
-function Header() {
-  const [showInitiatives, setShowInitiatives] = useState(false);
-  const [showLogin, setShowLogin] = useState(false);
-  const [username, setUsername] = useState("");
-  const [password, setPassword] = useState("");
-  const [user, setUser] = useState(null);
-  const [showMobileMenu, setShowMobileMenu] = useState(false);
-
-  const dropdownRef = useRef();
-  const navigate = useNavigate();
-
-  useEffect(() => {
-    try {
-      const savedUser = localStorage.getItem("rungmunchUser");
-      if (savedUser) {
-        const parsedUser = JSON.parse(savedUser);
-        setUser(parsedUser.firstName);
-      }
-    } catch (err) {
-      localStorage.removeItem("rungmunchUser");
-    }
-  }, []);
-
-  // ✅ FIXED: Close BOTH dropdowns
-  useEffect(() => {
-    const handleClickOutside = (e) => {
-      if (
-        dropdownRef.current &&
-        !dropdownRef.current.contains(e.target)
-      ) {
-        setShowInitiatives(false);
-      }
-    };
-
-    document.addEventListener("mousedown", handleClickOutside);
-    return () =>
-      document.removeEventListener("mousedown", handleClickOutside);
-  }, []);
-
-  const handleLogin = async (e) => {
-    e.preventDefault();
-
-    try {
-      const res = await fetch(`${process.env.REACT_APP_API_URL}/api/auth/login`, {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({ username, password }),
-      });
-
-      const data = await res.json();
-
-      if (!res.ok) {
-        alert(data.message || "Login failed");
-        return;
-      }
-
-      localStorage.setItem("rungmunchUser", JSON.stringify(data.user));
-      setUser(data.user.firstName);
-      setShowLogin(false);
-      setUsername("");
-      setPassword("");
-
-    } catch (err) {
-      console.error(err);
-      alert("Server error");
-    }
-  };
-
-  const handleLogout = () => {
-    localStorage.removeItem("rungmunchUser");
-    setUser(null);
-    navigate("/");
-  };
-
-  return (
-    <>
-      <nav className="navbar">
-        <div className="navbar-inner">
-
-         
-          <div className="logo-section">
-            <img src={logo} alt="Rungmunch Logo" className="logo" />
-          </div>
-
-          <button
-            className="menu-toggle"
-            onClick={() => setShowMobileMenu(!showMobileMenu)}
-          >
-            ☰
-          </button>
-
-        
-          <div className={`nav-links ${showMobileMenu ? "active" : ""}`}>
-
-            <Link to="/" onClick={() => setShowMobileMenu(false)}>Home</Link>
-            <Link to="/about" onClick={() => setShowMobileMenu(false)}>About Us</Link>
-            <Link to="/events" onClick={() => setShowMobileMenu(false)}>Events</Link>
-
-      
-            <div ref={dropdownRef} style={{ display: "flex", gap: "40px" }}>
-
-
-         
-              <div className="dropdown">
-                <span
-                  className="dropdown-title"
-                  onClick={() => {
-                    setShowInitiatives(!showInitiatives);
-                  
-                  }}
-                >
-                  Our Initiatives ▾
-                </span>
-
-                {showInitiatives && (
-                  <div className="dropdown-menu">
-                    <Link
-                      to="/initiatives/vista"
-                      onClick={() => {
-                        setShowMobileMenu(false);
-                        setShowInitiatives(false);
-                      }}
-                    >
-                      VISTA
-                    </Link>
-
-                    <Link
-                      to="/initiatives/wwii"
-                      onClick={() => {
-                        setShowMobileMenu(false);
-                        setShowInitiatives(false);
-                      }}
-                    >
-                      WWII
-                    </Link>
-                  </div>
-                )}
-              </div>
-
-            </div>
-
-            <Link to="/get-involved" onClick={() => setShowMobileMenu(false)}>Get Involved</Link>
-            <Link to="/contact" onClick={() => setShowMobileMenu(false)}>Contact</Link>
-
-       
-            <div className="auth-actions">
-              {user && (
-                <button
-                  className="user-btn"
-                  onClick={() => navigate("/my-history")}
-                >
-                  {user}
-                </button>
-              )}
-
-              {!user ? (
-                <button
-                  className="login-btn"
-                  onClick={() => setShowLogin(true)}
-                >
-                  Login
-                </button>
-              ) : (
-                <button
-                  className="login-btn"
-                  onClick={handleLogout}
-                >
-                  Logout
-                </button>
-              )}
-            </div>
-
-          </div>
-        </div>
-      </nav>
-
-  
-      {showLogin && (
-        <div className="login-overlay">
-          <div className="login-modal">
-            <h2>Login</h2>
-
-            <form onSubmit={handleLogin}>
-              <input
-                type="text"
-                placeholder="Username"
-                value={username}
-                onChange={(e) => setUsername(e.target.value)}
-                required
-              />
-
-              <input
-                type="password"
-                placeholder="Password"
-                value={password}
-                onChange={(e) => setPassword(e.target.value)}
-                required
-              />
-
-              <button type="submit">Login</button>
-            </form>
-
-            <span
-              className="close-btn"
-              onClick={() => setShowLogin(false)}
-            >
-              ✕
-            </span>
-          </div>
-        </div>
-      )}
-    </>
-  );
-}
-
-export default Header;
-*/
-
-
-
-
 import { Link, useNavigate } from "react-router-dom";
 import { useState, useEffect, useRef } from "react";
 import logo from "../assets/logo.png";
 
 function Header() {
+
   const [showInitiatives, setShowInitiatives] = useState(false);
   const [showLogin, setShowLogin] = useState(false);
+
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
+
   const [user, setUser] = useState(null);
+
   const [showMobileMenu, setShowMobileMenu] = useState(false);
 
   const dropdownRef = useRef();
+
   const navigate = useNavigate();
 
+  // ================= LOAD USER =================
   useEffect(() => {
     try {
+
       const savedUser = localStorage.getItem("rungmunchUser");
+
       if (savedUser) {
+
         const parsedUser = JSON.parse(savedUser);
-        setUser(parsedUser.firstName);
+
+        setUser(parsedUser);
       }
+
     } catch (err) {
+
       localStorage.removeItem("rungmunchUser");
     }
   }, []);
 
-  // ✅ FIXED: Close BOTH dropdowns
+  // ================= CLOSE DROPDOWN =================
   useEffect(() => {
+
     const handleClickOutside = (e) => {
+
       if (
         dropdownRef.current &&
         !dropdownRef.current.contains(e.target)
@@ -264,60 +51,103 @@ function Header() {
     };
 
     document.addEventListener("mousedown", handleClickOutside);
+
     return () =>
-      document.removeEventListener("mousedown", handleClickOutside);
+      document.removeEventListener(
+        "mousedown",
+        handleClickOutside
+      );
+
   }, []);
 
+  // ================= LOGIN =================
   const handleLogin = async (e) => {
+
     e.preventDefault();
 
     try {
-      const res = await fetch(`${process.env.REACT_APP_API_URL}/api/auth/login`, {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({ username, password }),
-      });
+
+const res = await fetch(
+  "https://rungmunch-backend.onrender.com/api/auth/login",
+  {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify({
+      username,
+      password
+    }),
+  }
+);
 
       const data = await res.json();
 
       if (!res.ok) {
+
         alert(data.message || "Login failed");
+
         return;
       }
 
-      localStorage.setItem("rungmunchUser", JSON.stringify(data.user));
-      setUser(data.user.firstName);
+      localStorage.setItem(
+        "rungmunchUser",
+        JSON.stringify(data.user)
+      );
+
+      setUser(data.user);
+
       setShowLogin(false);
+
       setUsername("");
       setPassword("");
 
+      // ✅ Navigate after login
+      if (data.user.role === "admin") {
+        navigate("/admin");
+      } else {
+        navigate("/my-history");
+      }
+
     } catch (err) {
+
       console.error(err);
+
       alert("Server error");
     }
   };
 
+  // ================= LOGOUT =================
   const handleLogout = () => {
+
     localStorage.removeItem("rungmunchUser");
+
     setUser(null);
+
     navigate("/");
   };
 
   return (
     <>
       <nav className="navbar">
+
         <div className="navbar-inner">
 
           {/* LEFT */}
           <div className="logo-section">
-            <img src={logo} alt="Rungmunch Logo" className="logo" />
+            <img
+              src={logo}
+              alt="Rungmunch Logo"
+              className="logo"
+            />
           </div>
 
+          {/* MOBILE BUTTON */}
           <button
             className="menu-toggle"
-            onClick={() => setShowMobileMenu(!showMobileMenu)}
+            onClick={() =>
+              setShowMobileMenu(!showMobileMenu)
+            }
           >
             ☰
           </button>
@@ -325,36 +155,47 @@ function Header() {
           {/* CENTER */}
           <div className={`nav-links ${showMobileMenu ? "active" : ""}`}>
 
-            <Link to="/" onClick={() => setShowMobileMenu(false)}>Home</Link>
-            <Link to="/about" onClick={() => setShowMobileMenu(false)}>About Us</Link>
-            <Link to="/events" onClick={() => setShowMobileMenu(false)}>Events</Link>
-           
+            <Link
+              to="/"
+              onClick={() => setShowMobileMenu(false)}
+            >
+              Home
+            </Link>
 
-{/* 👇 ADD HERE */}
-{user && (
-  <Link to="/admin" onClick={() => setShowMobileMenu(false)}>
-    Admin
-  </Link>
-)}
+            <Link
+              to="/about"
+              onClick={() => setShowMobileMenu(false)}
+            >
+              About Us
+            </Link>
 
-            {/* ✅ WRAPPED BOTH DROPDOWNS */}
-            <div ref={dropdownRef} style={{ display: "flex", gap: "40px" }}>
+            <Link
+              to="/events"
+              onClick={() => setShowMobileMenu(false)}
+            >
+              Events
+            </Link>
 
+            {/* INITIATIVES */}
+            <div
+              ref={dropdownRef}
+              style={{ display: "flex", gap: "40px" }}
+            >
 
-              {/* Initiatives */}
               <div className="dropdown">
+
                 <span
                   className="dropdown-title"
-                  onClick={() => {
-                    setShowInitiatives(!showInitiatives);
-                  
-                  }}
+                  onClick={() =>
+                    setShowInitiatives(!showInitiatives)
+                  }
                 >
                   Our Initiatives ▾
                 </span>
 
                 {showInitiatives && (
                   <div className="dropdown-menu">
+
                     <Link
                       to="/initiatives/vista"
                       onClick={() => {
@@ -374,34 +215,56 @@ function Header() {
                     >
                       WWII
                     </Link>
+
                   </div>
                 )}
               </div>
-
             </div>
 
-            <Link to="/get-involved" onClick={() => setShowMobileMenu(false)}>Get Involved</Link>
-            <Link to="/contact" onClick={() => setShowMobileMenu(false)}>Contact</Link>
+            <Link
+              to="/get-involved"
+              onClick={() => setShowMobileMenu(false)}
+            >
+              Get Involved
+            </Link>
 
-            {/* Auth */}
+            <Link
+              to="/contact"
+              onClick={() => setShowMobileMenu(false)}
+            >
+              Contact
+            </Link>
+
+            {/* AUTH */}
             <div className="auth-actions">
+
               {user && (
                 <button
                   className="user-btn"
-                  onClick={() => navigate("/my-history")}
+                  onClick={() => {
+
+                    if (user.role === "admin") {
+                      navigate("/admin");
+                    } else {
+                      navigate("/my-history");
+                    }
+                  }}
                 >
-                  {user}
+                  {user.firstName}
                 </button>
               )}
 
               {!user ? (
+
                 <button
                   className="login-btn"
                   onClick={() => setShowLogin(true)}
                 >
                   Login
                 </button>
+
               ) : (
+
                 <button
                   className="login-btn"
                   onClick={handleLogout}
@@ -410,23 +273,28 @@ function Header() {
                 </button>
               )}
             </div>
-
           </div>
         </div>
       </nav>
 
       {/* LOGIN MODAL */}
       {showLogin && (
+
         <div className="login-overlay">
+
           <div className="login-modal">
+
             <h2>Login</h2>
 
             <form onSubmit={handleLogin}>
+
               <input
                 type="text"
                 placeholder="Username"
                 value={username}
-                onChange={(e) => setUsername(e.target.value)}
+                onChange={(e) =>
+                  setUsername(e.target.value)
+                }
                 required
               />
 
@@ -434,11 +302,16 @@ function Header() {
                 type="password"
                 placeholder="Password"
                 value={password}
-                onChange={(e) => setPassword(e.target.value)}
+                onChange={(e) =>
+                  setPassword(e.target.value)
+                }
                 required
               />
 
-              <button type="submit">Login</button>
+              <button type="submit">
+                Login
+              </button>
+
             </form>
 
             <span
@@ -447,6 +320,7 @@ function Header() {
             >
               ✕
             </span>
+
           </div>
         </div>
       )}

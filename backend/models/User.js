@@ -47,4 +47,4 @@ const contactSchema = new mongoose.Schema({
 const User = mongoose.model("User", userSchema);
 const Contact = mongoose.model("Contact", contactSchema);
 
-module.exports = { User, Contact };
+module.exports = { User, Contact };  
