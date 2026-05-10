@@ -326,37 +326,156 @@ body {
 
 /* ================= RESPONSIVE ================= */
 
+@media (max-width: 1024px) {
+
+  .admin-events-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .admin-content {
+    padding: 90px 25px 40px;
+  }
+}
+
 @media (max-width: 900px) {
 
   .admin-wrapper {
     flex-direction: column;
   }
 
+  /* SIDEBAR */
   .admin-sidebar {
-    position: relative;
     width: 100%;
-    height: auto;
     min-height: auto;
+    position: relative;
+
+    padding: 80px 20px 20px;
   }
 
+  .admin-sidebar .logo {
+    margin-bottom: 20px;
+    font-size: 22px;
+    text-align: center;
+  }
+
+  .admin-sidebar ul {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+  }
+
+  .admin-sidebar li {
+    padding: 8px 14px;
+    font-size: 14px;
+  }
+
+  /* CONTENT */
   .admin-content {
-    margin-left: 0;
-    padding: 90px 20px 40px;
     width: 100%;
     max-width: 100%;
+    padding: 40px 18px 30px;
   }
 
-  .admin-events-grid {
-    grid-template-columns: 1fr;
-  }
-
+  /* HEADER */
   .events-header-admin {
     flex-direction: column;
+    align-items: stretch;
     gap: 15px;
-    align-items: flex-start;
   }
 
   .events-header-admin h2 {
     font-size: 28px;
+    text-align: center;
+  }
+
+  .events-header-admin button {
+    width: 100%;
+  }
+
+  /* GRID */
+  .admin-events-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  /* CARD */
+  .admin-event-card img {
+    height: 220px;
+  }
+
+  .admin-event-card h3 {
+    font-size: 22px;
+  }
+
+  .event-desc {
+    font-size: 14px;
+    line-height: 1.6;
+  }
+
+  /* ACTION BUTTONS */
+  .admin-actions {
+    flex-direction: column;
+  }
+
+  .admin-actions button {
+    width: 100%;
+  }
+
+  /* MODAL */
+  .modal-box {
+    width: 92%;
+    padding: 20px;
+    border-radius: 12px;
+  }
+
+  .admin-form input,
+  .admin-form textarea,
+  .admin-form select {
+    font-size: 15px;
+  }
+
+  .admin-form button {
+    font-size: 15px;
+  }
+}
+
+@media (max-width: 480px) {
+
+  .admin-sidebar {
+    padding: 75px 15px 15px;
+  }
+
+  .admin-content {
+    padding: 30px 14px 25px;
+  }
+
+  .events-header-admin h2 {
+    font-size: 24px;
+  }
+
+  .admin-event-card img {
+    height: 190px;
+  }
+
+  .admin-event-card h3 {
+    font-size: 20px;
+  }
+
+  .event-date {
+    font-size: 13px;
+  }
+
+  .event-desc {
+    font-size: 13px;
+  }
+
+  .modal-box {
+    width: 95%;
+    padding: 18px;
+  }
+
+  .close-btn {
+    top: 8px;
+    right: 10px;
   }
 }
