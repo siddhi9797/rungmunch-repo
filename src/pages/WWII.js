@@ -1,87 +1,241 @@
 import { useNavigate } from "react-router-dom";
 import { wwiiEvents } from "../data/eventsData";
-import "../styles/initiatives.css";
+import { motion } from "framer-motion";
+import "../styles/wwii.css";
+import e1 from "../assets/e1.jpg";
+import e2 from "../assets/e2.jpg";
+import e3 from "../assets/slider1.jpg";
+import CompetitionSlider from "../components/CompetitionSlider";
 
 function WWII() {
   const navigate = useNavigate();
 
   return (
-    <div className="page">
+    <div className="wwii-page">
 
-      {/* ===== NEW HERO SECTION ===== */}
-      <div className="wwii-hero">
+      {/* HERO SECTION */}
+      <section className="wwii-hero">
 
-        <h1 className="wwii-title">
-          WWII <span>– World Wide Indian Idol</span>
-        </h1>
+        <div className="hero-overlay"></div>
 
-        <p className="wwii-tagline">
-          It's a Global Effort
-        </p>
+        <div className="floating-circle circle1"></div>
+        <div className="floating-circle circle2"></div>
+        <div className="floating-circle circle3"></div>
 
-        <div className="wwii-content">
-          <p>
-            To search for hidden stars and bring them in front of a global audience
-          </p>
+        <motion.div
+          className="hero-content"
+          initial={{ opacity: 0, y: 60 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 1 }}
+        >
+          <span className="hero-badge">
+            Global Talent Platform
+          </span>
 
-          <p>
-            To create awareness and inspire passionate artists to contribute to the betterment of the community through art.
-          </p>
+          <h1 className="hero-main-title">
+  Discover The
+  <span>Next Global Star</span>
+</h1>
 
-          <p>
-            To create a support platform for artists to seek guidance, help, and resources.
-          </p>
+<p className="hero-desc">
+  World Wide Indian Idol is a global platform that discovers,
+  nurtures, and celebrates extraordinary talent while connecting
+  artists and communities through creativity.
+</p>
 
-          <p>
-            To create a support platform for the community to reach the passionate artist for the cause.
-          </p>
+<div className="hero-buttons">
+  <button
+    onClick={() =>
+      document
+        .getElementById("competitions")
+        .scrollIntoView({ behavior: "smooth" })
+    }
+  >
+    Explore Competitions
+  </button>
+
+  <button
+    onClick={() =>
+      document
+        .getElementById("activities")
+        .scrollIntoView({ behavior: "smooth" })
+    }
+  >
+    Our Activities
+  </button>
+</div>
+        </motion.div>
+      </section>
+
+<section className="vision-section">
+
+  <div className="vision-heading">
+    <h2>It's A Global Effort</h2>
+
+    <p>
+      Empowering artists, creating opportunities and building
+      meaningful connections through art.
+    </p>
+  </div>
+
+  <div className="vision-grid">
+
+    <div className="vision-card">
+      <h3>⭐ Hidden Stars</h3>
+      <p>
+        To search for hidden stars and bring them in front of
+        a global audience.
+      </p>
+    </div>
+
+    <div className="vision-card">
+      <h3>🎨 Inspire Artists</h3>
+      <p>
+        To create awareness and inspire passionate artists
+        through art.
+      </p>
+    </div>
+
+    <div className="vision-card">
+      <h3>🤝 Artist Support</h3>
+      <p>
+        To create a support platform for artists to seek
+        guidance, help and resources.
+      </p>
+    </div>
+
+    <div className="vision-card">
+      <h3>❤️ Community Connect</h3>
+      <p>
+        To create a support platform for the community to
+        reach passionate artists.
+      </p>
+    </div>
+
+  </div>
+
+</section>
+
+      {/* MISSION */}
+      <section className="mission-section">
+
+        <div className="mission-image">
+          <img
+            src={e3}
+            alt="Talent"
+          />
         </div>
 
-      </div>
+        <div className="mission-content">
 
-      {/* ===== COMPETITION SECTION ===== */}
-      <div className="competition-section">
-        <h2>Competitions</h2>
+          <h2>
+            Our Mission,
+            <span>Your Talent</span>
+          </h2>
 
-        <div className="competition-cards">
+          <div className="mission-cards">
 
-          <div
-            className="competition-card"
-            onClick={() => navigate("/competition/dance")}
-          >
-            <h3>Dance</h3>
+            <div className="mission-card">
+              <h4>🎤 Hidden Stars</h4>
+              <p>Finding talented artists globally.</p>
+            </div>
+
+            <div className="mission-card">
+              <h4>🌎 Global Reach</h4>
+              <p>Connecting artists with audiences worldwide.</p>
+            </div>
+
+            <div className="mission-card">
+              <h4>🤝 Artist Support</h4>
+              <p>Providing resources and guidance.</p>
+            </div>
+
+            <div className="mission-card">
+              <h4>❤️ Community Impact</h4>
+              <p>Using art for social good.</p>
+            </div>
+
           </div>
-
-          <div
-            className="competition-card"
-            onClick={() => navigate("/competition/music")}
-          >
-            <h3>Music</h3>
-          </div>
-
-          <div
-            className="competition-card"
-            onClick={() => navigate("/competition/instrumental")}
-          >
-            <h3>Instrumental</h3>
-          </div>
-
         </div>
-      </div>
 
-      {/* ===== EXISTING ACTIVITIES ===== */}
-      <div className="initiative-section">
-        <h2>Our Activities</h2>
+      </section>
 
-        <div className="initiative-cards">
-          {wwiiEvents.map((event) => (
-            <div key={event.id} className="initiative-card">
-              <h3>{event.title}</h3>
+      {/* COMPETITIONS */}
+ <section id="competitions">
+  <CompetitionSlider />
+</section>
+
+      {/* ACTIVITIES */}
+      <section id="activities" className="activities-section">
+
+  <div className="activities-wrapper">
+
+    {/* LEFT SIDE */}
+
+    <div className="activities-left">
+
+      <h2>Our Activities</h2>
+
+      <p className="activities-intro">
+        Through talent discovery, community engagement,
+        and cultural awareness initiatives, WWII creates
+        opportunities for artists to shine on a global stage.
+      </p>
+
+      <div className="activities-features">
+
+        {wwiiEvents.map((event) => (
+
+          <div key={event.id} className="feature-item">
+
+            <div className="feature-icon">
+              0{event.id}
+            </div>
+
+            <div>
+              <h4>{event.title}</h4>
               <p>{event.description}</p>
             </div>
-          ))}
-        </div>
+
+          </div>
+
+        ))}
+
       </div>
+
+    </div>
+
+    {/* RIGHT SIDE */}
+
+    <div className="activities-right">
+
+<div className="activity-image-card">
+  <img
+    src={e1}
+    alt="Talent Discovery"
+  />
+
+  <div className="image-title">
+    Talent Discovery
+  </div>
+</div>
+
+<div className="activity-image-card">
+  <img
+    src={e2}
+    alt="Global Community"
+  />
+
+  <div className="image-title">
+    Global Community
+  </div>
+</div>
+
+    </div>
+
+  </div>
+
+</section>
 
     </div>
   );
