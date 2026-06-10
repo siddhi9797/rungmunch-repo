@@ -1,4 +1,4 @@
-import { useNavigate } from "react-router-dom";
+
 import { wwiiEvents } from "../data/eventsData";
 import { motion } from "framer-motion";
 import "../styles/wwii.css";
@@ -8,7 +8,7 @@ import e3 from "../assets/slider1.jpg";
 import CompetitionSlider from "../components/CompetitionSlider";
 
 function WWII() {
-  const navigate = useNavigate();
+ 
 
   return (
     <div className="wwii-page">
