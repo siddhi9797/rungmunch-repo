@@ -136,33 +136,33 @@ const visibleFaqs = faqs.slice(startIndex, startIndex + itemsPerPage);
         <div className="contact-info-box">
 
           <a
-            href="mailto:rungmunch@gmail.com"
+            href="mailto:contact@rungmunch.org"
             className="contact-info-card"
           >
             <img src={emailIcon} alt="Email" />
             <h3>Email</h3>
-            <p>rungmunch@gmail.com</p>
+            <p>contact@rungmunch.org</p>
           </a>
 
           <a
-            href="tel:+919999999999"
+            href="tel:+1(510)55MUNCH"
             className="contact-info-card"
           >
             <img src={phoneIcon} alt="Phone" />
             <h3>Phone</h3>
-            <p>+91 99999 99999</p>
+            <p>+1(510)55MUNCH</p>
           </a>
 
-          <a
-            href="https://www.google.com/maps?q=Pune"
-            target="_blank"
-            rel="noreferrer"
-            className="contact-info-card"
-          >
-            <img src={locationIcon} alt="Location" />
-            <h3>Location</h3>
-            <p>Pune, India</p>
-          </a>
+         <a
+  href="https://maps.google.com/?q=310+Grau+Drive,+Fremont,+CA+94536"
+  target="_blank"
+  rel="noreferrer"
+  className="contact-info-card"
+>
+  <img src={locationIcon} alt="Location" />
+  <h3>Location</h3>
+  <p>310 Grau Drive, Fremont, CA 94536, UNITED STATES</p>
+</a>
 
         </div>
 

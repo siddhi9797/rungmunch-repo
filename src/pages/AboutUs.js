@@ -192,9 +192,9 @@ function AboutUs() {
 
   <div className="team-grid">
     <div className="team-member">
-      <img src="/images/team1.jpg" alt="Member" />
-      <h4>Jenny Doe</h4>
-      <p>President</p>
+      <img src="/images/t1.png" alt="Member" />
+      <h4>Madhav Karhade</h4>
+      <p>CHIEF TROUBLEMAKER</p>
       <div className="team-socials">
     {/* LinkedIn */}
     <a
@@ -213,9 +213,9 @@ function AboutUs() {
     </div>
 
     <div className="team-member">
-      <img src="/images/team2.webp" alt="Member" />
-      <h4>Jane Smith</h4>
-      <p>Coordinator</p>
+      <img src="/images/t2.png" alt="Member" />
+      <h4>Archana Varshney</h4>
+      <p>FEET OF WONDER</p>
       <div className="team-socials">
     {/* LinkedIn */}
     <a
@@ -234,9 +234,9 @@ function AboutUs() {
     </div>
 
     <div className="team-member">
-      <img src="/images/team3.webp" alt="Member" />
-      <h4>Mike Johnson</h4>
-      <p>Volunteer Lead</p>
+      <img src="/images/t3.png" alt="Member" />
+      <h4>Vrinda Ghosalkar</h4>
+      <p>AMBASSADOR OF BUZZ</p>
       <div className="team-socials">
     {/* LinkedIn */}
     <a
