@@ -1,4 +1,4 @@
-import { Link, useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 import { useState, useEffect, useRef } from "react";
 import logo from "../assets/logo.png";
 
@@ -17,7 +17,6 @@ function Header() {
 
   const dropdownRef = useRef();
 
-  const navigate = useNavigate();
 
   /*
   useEffect(() => {
