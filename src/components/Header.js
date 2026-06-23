@@ -5,12 +5,13 @@ import logo from "../assets/logo.png";
 function Header() {
 
   const [showInitiatives, setShowInitiatives] = useState(false);
-  const [showLogin, setShowLogin] = useState(false);
+  //const [showLogin, setShowLogin] = useState(false);
 
-  const [username, setUsername] = useState("");
-  const [password, setPassword] = useState("");
+  //const [username, setUsername] = useState("");
+  //const [password, setPassword] = useState("");
+  const [showEvents, setShowEvents] = useState(false);
 
-  const [user, setUser] = useState(null);
+  //const [user, setUser] = useState(null);
 
   const [showMobileMenu, setShowMobileMenu] = useState(false);
 
@@ -18,7 +19,7 @@ function Header() {
 
   const navigate = useNavigate();
 
-  // ================= LOAD USER =================
+  /*
   useEffect(() => {
     try {
 
@@ -36,6 +37,7 @@ function Header() {
       localStorage.removeItem("rungmunchUser");
     }
   }, []);
+  */
 
   // ================= CLOSE DROPDOWN =================
   useEffect(() => {
@@ -61,7 +63,7 @@ function Header() {
   }, []);
 
   // ================= LOGIN =================
-  const handleLogin = async (e) => {
+  /* const handleLogin = async (e) => {
 
     e.preventDefault();
 
@@ -115,17 +117,17 @@ const res = await fetch(
 
       alert("Server error");
     }
-  };
+  }; */
 
   // ================= LOGOUT =================
-  const handleLogout = () => {
+ /* const handleLogout = () => {
 
     localStorage.removeItem("rungmunchUser");
 
     setUser(null);
 
     navigate("/");
-  };
+  }; */
 
   return (
     <>
@@ -169,57 +171,82 @@ const res = await fetch(
               About Us
             </Link>
 
-            <Link
-              to="/events"
-              onClick={() => setShowMobileMenu(false)}
-            >
-              Events
-            </Link>
 
             {/* INITIATIVES */}
-            <div
-              ref={dropdownRef}
-              style={{ display: "flex", gap: "40px" }}
-            >
+           {/* EVENTS */}
+<div className="dropdown">
+  <span
+    className="dropdown-title"
+    onClick={() => setShowEvents(!showEvents)}
+  >
+    Events ▾
+  </span>
 
-              <div className="dropdown">
+  {showEvents && (
+    <div className="dropdown-menu">
+      <Link
+        to="/events/upcoming"
+        onClick={() => {
+          setShowEvents(false);
+          setShowMobileMenu(false);
+        }}
+      >
+        Upcoming Events
+      </Link>
 
-                <span
-                  className="dropdown-title"
-                  onClick={() =>
-                    setShowInitiatives(!showInitiatives)
-                  }
-                >
-                  Our Initiatives ▾
-                </span>
+      <Link
+        to="/events/past"
+        onClick={() => {
+          setShowEvents(false);
+          setShowMobileMenu(false);
+        }}
+      >
+        Past Events
+      </Link>
+    </div>
+  )}
+</div>
 
-                {showInitiatives && (
-                  <div className="dropdown-menu">
+{/* INITIATIVES */}
+<div
+  ref={dropdownRef}
+  style={{ display: "flex", gap: "40px" }}
+>
+  <div className="dropdown">
+    <span
+      className="dropdown-title"
+      onClick={() =>
+        setShowInitiatives(!showInitiatives)
+      }
+    >
+      Our Initiatives ▾
+    </span>
 
-                    <Link
-                      to="/initiatives/vista"
-                      onClick={() => {
-                        setShowMobileMenu(false);
-                        setShowInitiatives(false);
-                      }}
-                    >
-                      VISTA
-                    </Link>
+    {showInitiatives && (
+      <div className="dropdown-menu">
+        <Link
+          to="/initiatives/vista"
+          onClick={() => {
+            setShowInitiatives(false);
+            setShowMobileMenu(false);
+          }}
+        >
+          VISTA
+        </Link>
 
-                    <Link
-                      to="/initiatives/wwii"
-                      onClick={() => {
-                        setShowMobileMenu(false);
-                        setShowInitiatives(false);
-                      }}
-                    >
-                      WWII
-                    </Link>
-
-                  </div>
-                )}
-              </div>
-            </div>
+        <Link
+          to="/initiatives/wwii"
+          onClick={() => {
+            setShowInitiatives(false);
+            setShowMobileMenu(false);
+          }}
+        >
+          WWII
+        </Link>
+      </div>
+    )}
+  </div>
+</div>
 
             <Link
               to="/get-involved"
@@ -236,6 +263,7 @@ const res = await fetch(
             </Link>
 
             {/* AUTH */}
+            {/*
             <div className="auth-actions">
 
               {user && (
@@ -273,57 +301,60 @@ const res = await fetch(
                 </button>
               )}
             </div>
+            */}
           </div>
         </div>
       </nav>
 
-      {/* LOGIN MODAL */}
-      {showLogin && (
+      {/*
+{showLogin && (
 
-        <div className="login-overlay">
+  <div className="login-overlay">
 
-          <div className="login-modal">
+    <div className="login-modal">
 
-            <h2>Login</h2>
+      <h2>Login</h2>
 
-            <form onSubmit={handleLogin}>
+      <form onSubmit={handleLogin}>
 
-              <input
-                type="text"
-                placeholder="Username"
-                value={username}
-                onChange={(e) =>
-                  setUsername(e.target.value)
-                }
-                required
-              />
+        <input
+          type="text"
+          placeholder="Username"
+          value={username}
+          onChange={(e) =>
+            setUsername(e.target.value)
+          }
+          required
+        />
 
-              <input
-                type="password"
-                placeholder="Password"
-                value={password}
-                onChange={(e) =>
-                  setPassword(e.target.value)
-                }
-                required
-              />
+        <input
+          type="password"
+          placeholder="Password"
+          value={password}
+          onChange={(e) =>
+            setPassword(e.target.value)
+          }
+          required
+        />
 
-              <button type="submit">
-                Login
-              </button>
+        <button type="submit">
+          Login
+        </button>
 
-            </form>
+      </form>
 
-            <span
-              className="close-btn"
-              onClick={() => setShowLogin(false)}
-            >
-              ✕
-            </span>
+      <span
+        className="close-btn"
+        onClick={() => setShowLogin(false)}
+      >
+        ✕
+      </span>
 
-          </div>
-        </div>
-      )}
+    </div>
+  </div>
+
+)}
+*/}
     </>
   );
 }

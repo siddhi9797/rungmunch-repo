@@ -14,6 +14,8 @@ import EventDetails1 from "./pages/EventDetails1";
 import Vista from "./pages/Vista";
 import WWII from "./pages/WWII";
 import AdminPage from "./pages/AdminPage";
+import UpcomingEvents from "./pages/UpcomingEvents";
+import PastEvents from "./pages/PastEvents";
 
 function App() {
   return (
@@ -33,6 +35,8 @@ function App() {
          <Route path="/initiatives/vista" element={<Vista />} />
          <Route path="/initiatives/wwii" element={<WWII />} />
          <Route path="/admin" element={<AdminPage />} />
+         <Route path="/events/upcoming" element={<UpcomingEvents />} />
+<Route path="/events/past" element={<PastEvents />} />
       </Routes>
       <Footer />
     </BrowserRouter>

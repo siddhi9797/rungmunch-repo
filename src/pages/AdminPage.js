@@ -208,13 +208,12 @@ function AdminPage() {
                 onChange={handleChange}
               />
 
-              <input
-                type="text"
-                name="date"
-                placeholder="Date (e.g. 01 Mar 2026)"
-                value={form.date}
-                onChange={handleChange}
-              />
+           <input
+  type="date"
+  name="date"
+  value={form.date}
+  onChange={handleChange}
+/>
 
               <textarea
                 name="description"
