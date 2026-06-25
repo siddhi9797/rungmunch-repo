@@ -58,10 +58,10 @@ const handleSubmit = async () => {
 };
 
   return (
-    <div className="page">
+    <div className="vista-page">
 
       {/* HEADER */}
-<div className="page-banner">
+<div className="page-banner vista-banner">
   <h1>VISTA</h1>
   <p className="initiative-subtitle">
     Virtual Stage – Participate in cultural events from anywhere

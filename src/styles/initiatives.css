@@ -17,27 +17,35 @@
 /* ================= COMMON INITIATIVES PAGE ================= */
 
 /* initiatives.css */
-.page {
-  min-height: 100vh;
-  background: #ffffff;
-  font-family: 'DM Sans', sans-serif;
-  padding: 0;
-}
+
 
 /* ================= HEADER ================= */
 
-.page-banner h1 {
-  font-size: var(--page-title-size);
-  color: var(--green-dark);
-  margin-bottom: 10px;
+.vista-page {
+   min-height: 100vh;
+  padding-top: 90px;
+  font-family: 'DM Sans', sans-serif;
 }
 
-.page-banner .initiative-subtitle {
+/* ===== VISTA BANNER ===== */
+
+.vista-banner h1 {
+  font-size: var(--page-title-size);
+  font-weight: 700;
+  color: var(--green-dark);
+  letter-spacing: 1px;
+  font-family: var(--font-heading);
+}
+
+.vista-banner .initiative-subtitle {
   font-size: 18px;
   color: #555;
+  margin-top: 12px;
+  font-family: 'DM Sans', sans-serif;
 }
 
 .page-header h1 {
+
   font-size: 52px;
   font-weight: 700;
   color: var(--green-dark);
@@ -46,12 +54,7 @@
   font-family: 'Oswald', sans-serif;
 }
 
-.initiative-subtitle {
-  font-size: 18px;
-  color: #555;
-  margin-top: 12px;
-  font-family: 'DM Sans', sans-serif;
-}
+
 
 /* ================= BUTTON ================= */
 
@@ -475,6 +478,9 @@
   .page {
     padding-top: 80px;
   }
+
+
+
 
   .page-header {
     padding: 35px 20px 50px;
