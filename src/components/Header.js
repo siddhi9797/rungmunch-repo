@@ -5,6 +5,7 @@ import logo from "../assets/logo.png";
 function Header() {
 
   const [showInitiatives, setShowInitiatives] = useState(false);
+  
   //const [showLogin, setShowLogin] = useState(false);
 
   //const [username, setUsername] = useState("");
@@ -15,7 +16,7 @@ function Header() {
 
   const [showMobileMenu, setShowMobileMenu] = useState(false);
 
-  const dropdownRef = useRef();
+ const dropdownRef = useRef(null);
 
 
   /*
@@ -39,27 +40,25 @@ function Header() {
   */
 
   // ================= CLOSE DROPDOWN =================
-  useEffect(() => {
+useEffect(() => {
+  const handleClickOutside = (e) => {
+    // Close dropdowns when clicking anywhere outside the dropdown wrapper
+    if (!dropdownRef.current) return;
 
-    const handleClickOutside = (e) => {
+    const target = e.target;
+    if (target && !dropdownRef.current.contains(target)) {
+      setShowInitiatives(false);
+      setShowEvents(false);
+    }
+  };
 
-      if (
-        dropdownRef.current &&
-        !dropdownRef.current.contains(e.target)
-      ) {
-        setShowInitiatives(false);
-      }
-    };
+  // Use capture + pointerdown to ensure we close before navigation/route changes
+  document.addEventListener("pointerdown", handleClickOutside, true);
 
-    document.addEventListener("mousedown", handleClickOutside);
-
-    return () =>
-      document.removeEventListener(
-        "mousedown",
-        handleClickOutside
-      );
-
-  }, []);
+  return () => {
+    document.removeEventListener("pointerdown", handleClickOutside, true);
+  };
+}, []);
 
   // ================= LOGIN =================
   /* const handleLogin = async (e) => {
@@ -171,52 +170,59 @@ const res = await fetch(
             </Link>
 
 
-            {/* INITIATIVES */}
-           {/* EVENTS */}
-<div className="dropdown">
-  <span
-    className="dropdown-title"
-    onClick={() => setShowEvents(!showEvents)}
-  >
-    Events ▾
-  </span>
-
-  {showEvents && (
-    <div className="dropdown-menu">
-      <Link
-        to="/events/upcoming"
-        onClick={() => {
-          setShowEvents(false);
-          setShowMobileMenu(false);
-        }}
-      >
-        Upcoming Events
-      </Link>
-
-      <Link
-        to="/events/past"
-        onClick={() => {
-          setShowEvents(false);
-          setShowMobileMenu(false);
-        }}
-      >
-        Past Events
-      </Link>
-    </div>
-  )}
-</div>
+           
 
 {/* INITIATIVES */}
-<div
+
+  <div
   ref={dropdownRef}
   style={{ display: "flex", gap: "40px" }}
 >
+  {/* EVENTS */}
   <div className="dropdown">
     <span
       className="dropdown-title"
-      onClick={() =>
-        setShowInitiatives(!showInitiatives)
-      }
+      onClick={() => {
+  setShowEvents(!showEvents);
+  setShowInitiatives(false);
+}}
+    >
+      Events ▾
+    </span>
+
+    {showEvents && (
+      <div className="dropdown-menu">
+        <Link
+          to="/events/upcoming"
+          onClick={() => {
+            setShowEvents(false);
+            setShowMobileMenu(false);
+          }}
+        >
+          Upcoming Events
+        </Link>
+
+        <Link
+          to="/events/past"
+          onClick={() => {
+            setShowEvents(false);
+            setShowMobileMenu(false);
+          }}
+        >
+          Past Events
+        </Link>
+      </div>
+    )}
+  </div>
+
+  {/* INITIATIVES */}
+  <div className="dropdown">
+    <span
+      className="dropdown-title"
+      onClick={() => {
+  setShowInitiatives(!showInitiatives);
+  setShowEvents(false);
+}}
     >
       Our Initiatives ▾
     </span>

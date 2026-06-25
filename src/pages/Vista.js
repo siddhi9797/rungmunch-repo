@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { vistaEvents } from "../data/eventsData";
-import "../styles/initiatives.css";
+import "../styles/vista.css";
 import Registration from "../components/Registration";
 
 function Vista() {
