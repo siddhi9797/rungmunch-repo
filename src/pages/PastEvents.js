@@ -33,7 +33,7 @@ setEvents(past);
 
   return (
     <div className="events-page">
-      <div className="events-header">
+      <div className="page-banner events-header">
         <h1>Past Events</h1>
       </div>
 

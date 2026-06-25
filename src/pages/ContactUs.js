@@ -85,7 +85,7 @@ const visibleFaqs = faqs.slice(startIndex, startIndex + itemsPerPage);
     <div className="contact-page">
 
      
-      <div className="contact-banner">
+      <div className="page-banner contact-banner">
         <h1>Contact Us</h1>
         <p>We’d love to hear from you. Feel free to reach out anytime.</p>
       </div>

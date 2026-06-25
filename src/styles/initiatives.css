@@ -16,26 +16,25 @@
 
 /* ================= COMMON INITIATIVES PAGE ================= */
 
+/* initiatives.css */
 .page {
   min-height: 100vh;
   background: #ffffff;
-  padding-top: 90px;
   font-family: 'DM Sans', sans-serif;
+  padding: 0;
 }
 
 /* ================= HEADER ================= */
 
-.page-header {
-  text-align: center;
-  background: linear-gradient(
-    180deg,
-    #e6f3eb,
-    #cce8d6,
-    #99d0b0,
-    #66b388
-  );
-  padding: 40px 20px 60px;
-  border-bottom: 1px solid #e6f3eb;
+.page-banner h1 {
+  font-size: var(--page-title-size);
+  color: var(--green-dark);
+  margin-bottom: 10px;
+}
+
+.page-banner .initiative-subtitle {
+  font-size: 18px;
+  color: #555;
 }
 
 .page-header h1 {

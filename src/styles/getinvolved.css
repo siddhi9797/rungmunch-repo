@@ -3,8 +3,7 @@
 @tailwind utilities;
 */
 
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Oswald:wght@400;500;600;700&display=swap');
-
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600;700;800&family=Oswald:wght@400;500;600;700&display=swap');
 :root {
   --text-dark: #1a1a1a;
   --text-light: #ffffff;
@@ -20,48 +19,36 @@
   min-height: 100vh;
   padding-top: 90px;
   padding-bottom: 80px;
-  font-family: 'Inter', sans-serif;
+   font-family: var(--font-body);
   overflow-x: hidden;
 }
 
 /* ================= HEADER ================= */
 
 .getinvolved-banner {
-  text-align: center;
-
-  background: linear-gradient(
-    180deg,
-    #e6f3eb,
-    #cce8d6,
-    #99d0b0,
-    #66b388
-  );
-
-  padding: 40px 20px 60px;
   position: relative;
-  border-bottom: 1px solid #e6f3eb;
 }
 
 .getinvolved-banner h1 {
-  font-size: 52px;
+    font-size: var(--page-title-size);
   font-weight: 700;
   color: var(--green-dark);
   margin: 0;
   position: relative;
   z-index: 2;
 
-  font-family: 'Oswald', sans-serif;
+   font-family: var(--font-heading);
   letter-spacing: 0.5px;
 }
 
 .getinvolved-banner p {
-  font-size: 18px;
+  font-size: var(--body-text-size);
   color: #555;
   margin-top: 12px;
   position: relative;
   z-index: 2;
 
-  font-family: 'Inter', sans-serif;
+  font-family: var(--font-body);
 }
 
 /* ================= CONTENT ================= */
@@ -81,10 +68,10 @@
 
 .why-join h2 {
   color: var(--green-dark);
-  font-size: 34px;
+    font-size: var(--section-title-size);
   margin-bottom: 18px;
 
-  font-family: 'Oswald', sans-serif;
+    font-family: var(--font-heading);
   letter-spacing: 0.3px;
 }
 
@@ -93,9 +80,8 @@
   max-width: 900px;
   margin: auto;
   line-height: 1.8;
-  font-size: 17px;
-
-  font-family: 'Inter', sans-serif;
+  font-size: var(--body-text-size);
+ font-family: var(--font-body);
 }
 
 /* ================= CARDS ================= */
@@ -119,7 +105,7 @@
 
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 
-  font-family: 'Inter', sans-serif;
+   font-family: var(--font-body);
 }
 
 .involve-card:hover {
@@ -138,20 +124,18 @@
 .involve-card h3 {
   color: var(--green-dark);
   margin-bottom: 16px;
-  font-size: 24px;
+    font-size: var(--section-title-size);
+  font-family: var(--font-heading);
   font-weight: 700;
-
-  font-family: 'Oswald', sans-serif;
   letter-spacing: 0.3px;
 }
 
 .involve-card p {
   color: #555;
-  line-height: 1.7;
   margin-bottom: 28px;
-  font-size: 15px;
-
-  font-family: 'Inter', sans-serif;
+  font-size: var(--body-text-size);
+  line-height: 1.8;
+   font-family: var(--font-body);
 }
 
 /* ================= BUTTON ================= */
@@ -170,8 +154,7 @@
   text-decoration: none;
   border-radius: 30px;
   font-weight: 600;
-
-  font-family: 'Inter', sans-serif;
+  font-family: var(--font-body);
 
   transition: all 0.3s ease;
 }

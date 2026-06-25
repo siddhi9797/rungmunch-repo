@@ -11,7 +11,7 @@ function GetInvolved() {
     <div className="getinvolved-page">
 
       {/* FULL WIDTH BANNER */}
-      <div className="getinvolved-banner">
+      <div className="page-banner getinvolved-banner">
         <h1>Get Involved with Rungmunch</h1>
         <p>Be a part of culture, creativity, and community</p>
       </div>

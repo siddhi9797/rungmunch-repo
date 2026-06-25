@@ -61,12 +61,12 @@ const handleSubmit = async () => {
     <div className="page">
 
       {/* HEADER */}
-      <div className="page-header">
-        <h1>VISTA</h1>
-        <p className="initiative-subtitle">
-          Virtual Stage – Participate in cultural events from anywhere
-        </p>
-      </div>
+<div className="page-banner">
+  <h1>VISTA</h1>
+  <p className="initiative-subtitle">
+    Virtual Stage – Participate in cultural events from anywhere
+  </p>
+</div>
 
       {/* ================= ROADMAP ================= */}
       <div className="initiative-section">

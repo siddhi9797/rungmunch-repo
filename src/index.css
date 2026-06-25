@@ -56,13 +56,58 @@ body {
   font-family: 'DM Sans', sans-serif;
 }
 
-/* ONLY FONT UPDATED */
+/* Typography standard (apply across all pages)
+   Note: page-specific styles can still override color/layout, but font + base sizes should be consistent.
+*/
+
+:root {
+  --font-body: 'DM Sans', sans-serif;
+  --font-heading: 'Oswald', sans-serif;
+
+  /* Page title */
+  --page-title-size: 52px;
+
+  /* Section headings */
+  --section-title-size: 34px;
+
+  /* Paragraph text */
+  --body-text-size: 18px;
+}
+
+body {
+  font-family: var(--font-body);
+  font-size: var(--body-text-size);
+  line-height: 1.8;
+}
 
 h1,
 h2,
 h3,
 h4,
 h5,
+h6 {
+  font-family: var(--font-heading);
+  font-weight: 700;
+  color: inherit;
+  line-height: 1.25;
+  margin: 0;
+}
+
+h1 { font-size: var(--heading-1); }
+h2 { font-size: var(--heading-2); }
+h3 { font-size: var(--heading-3); }
+h4 { font-size: var(--heading-4); }
+h5 { font-size: var(--heading-5); }
+h6 { font-size: var(--heading-6); }
+
+p {
+  font-family: var(--font-body);
+  font-size: var(--text-base);
+  color: inherit;
+  margin: 0;
+}
+
+/* keep existing special cases */
 .logo,
 .dropdown-title,
 .footer-contact h3,
@@ -70,8 +115,9 @@ h5,
 .objectives-title,
 .vmv-card h3,
 .objectives-content h3 {
-  font-family: 'Oswald', sans-serif;
+  font-family: var(--font-heading);
 }
+
 
 
 
@@ -327,6 +373,28 @@ h5,
   height: auto;
   padding-bottom: 80px;
   padding: 100px 20px 40px; /* top padding = navbar height */
+}
+
+.page-banner {
+  height: 220px;   /* fixed height for all banners */
+  text-align: center;
+
+  background: linear-gradient(
+    180deg,
+    #e6f3eb,
+    #cce8d6,
+    #99d0b0,
+    #66b388
+  );
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.page-banner h1 {
+  margin: 0;
 }
 
 .footer {
