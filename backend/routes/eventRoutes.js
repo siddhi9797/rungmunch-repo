@@ -28,20 +28,28 @@ const upload = multer({ storage });
 // ================= CREATE EVENT =================
 router.post("/create", upload.single("image"), async (req, res) => {
   try {
-    const { title, date, description, language, type } = req.body;
+    const {
+  title,
+  date,
+  venue,
+  description,
+  language,
+  type
+} = req.body;
 
     if (!req.file) {
       return res.status(400).json({ message: "Image is required" });
     }
 
-    const newEvent = new Event({
-      title,
-      date,
-      description,
-      language,
-      type,
-      image: req.file.path // ✅ Cloudinary URL
-    });
+const newEvent = new Event({
+  title,
+  date,
+  venue,
+  description,
+  language,
+  type,
+  image: req.file.path
+});
 
     await newEvent.save();
 
@@ -98,7 +106,14 @@ router.delete("/:id", async (req, res) => {
 // ================= UPDATE EVENT =================
 router.put("/:id", upload.single("image"), async (req, res) => {
   try {
-    const { title, date, description, language, type } = req.body;
+   const {
+  title,
+  date,
+  venue,
+  description,
+  language,
+  type
+} = req.body;
 
     const event = await Event.findById(req.params.id);
 
@@ -116,6 +131,7 @@ router.put("/:id", upload.single("image"), async (req, res) => {
     // ✅ Update fields
     event.title = title;
     event.date = date;
+    event.venue = venue;
     event.description = description;
     event.language = language;
     event.type = type;

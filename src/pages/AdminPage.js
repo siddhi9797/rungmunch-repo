@@ -8,13 +8,14 @@ function AdminPage() {
 
   const [editId, setEditId] = useState(null);
 
-  const [form, setForm] = useState({
-    title: "",
-    date: "",
-    description: "",
-    language: "English",
-    type: "upcoming"
-  });
+const [form, setForm] = useState({
+  title: "",
+  date: "",
+  venue: "",
+  description: "",
+  language: "English",
+  type: "upcoming"
+});
 
   const [image, setImage] = useState(null);
 
@@ -103,13 +104,14 @@ function AdminPage() {
   // ================= EDIT =================
   const handleEdit = (event) => {
 
-    setForm({
-      title: event.title,
-      date: event.date,
-      description: event.description,
-      language: event.language,
-      type: event.type
-    });
+setForm({
+  title: event.title,
+  date: event.date,
+  venue: event.venue,
+  description: event.description,
+  language: event.language,
+  type: event.type
+});
 
     setEditId(event._id);
 
@@ -119,13 +121,14 @@ function AdminPage() {
   // RESET
   const resetForm = () => {
 
-    setForm({
-      title: "",
-      date: "",
-      description: "",
-      language: "English",
-      type: "upcoming"
-    });
+setForm({
+  title: "",
+  date: "",
+  venue: "",
+  description: "",
+  language: "English",
+  type: "upcoming"
+});
 
     setImage(null);
     setEditId(null);
@@ -167,6 +170,8 @@ function AdminPage() {
               <h3>{event.title}</h3>
 
               <p className="event-date">{event.date}</p>
+
+              <p className="event-venue">📍 {event.venue}</p>
 
               <p className="event-desc">{event.description}</p>
 
@@ -214,7 +219,13 @@ function AdminPage() {
   value={form.date}
   onChange={handleChange}
 />
-
+<input
+  type="text"
+  name="venue"
+  placeholder="Venue"
+  value={form.venue}
+  onChange={handleChange}
+/>
               <textarea
                 name="description"
                 placeholder="Description"

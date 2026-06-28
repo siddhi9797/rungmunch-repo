@@ -59,7 +59,9 @@ setEvents(past);
             <span className="event-date">
               {event.date}
             </span>
-
+<p className="event-venue">
+  📍 {event.venue}
+</p>
             <p>{event.description}</p>
 
             <button

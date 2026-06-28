@@ -37,7 +37,7 @@ useEffect(() => {
       <div className="page-banner events-header">
         <h1>Upcoming Events</h1>
       </div>
-
+   
       <div className="events-filter">
         {["All", "Marathi", "Hindi", "English"].map((lang) => (
           <button
@@ -60,7 +60,9 @@ useEffect(() => {
             <span className="event-date">
               {event.date}
             </span>
-
+<p className="event-venue">
+  📍 {event.venue}
+</p>
             <p>{event.description}</p>
 
             <button
