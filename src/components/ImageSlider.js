@@ -28,7 +28,7 @@ function ImageSlider() {
     Rungmunch
   </h1>
 
-  <p>A space where theatre meets community</p>
+  <p>A space where artists meets community for the betterment of the community</p>
 </div>
     </div>
   );

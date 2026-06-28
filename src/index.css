@@ -143,13 +143,19 @@ p {
 .logo {
   width: 75px;
   height: 75px;
+  object-fit: contain;
+  display: block;      /* Removes extra bottom whitespace */
 }
 
 .logo-section {
   position: absolute;
   left: 30px;
+  top: 50%;
+  transform: translateY(-50%);
   display: flex;
   align-items: center;
+  justify-content: center;
+  height: 100%;
 }
 
 
@@ -177,8 +183,8 @@ p {
   justify-content: center;
   align-items: center;
   gap: 40px;
-    top: 80px;
 }
+
 
 .nav-links a,
 .dropdown-title {
@@ -223,6 +229,20 @@ p {
 .dropdown-menu a:hover {
   background-color: var(--gfm-green-soft);
   color: var(--gfm-green-dark);
+}
+
+.dropdown-wrapper {
+  display: flex;
+  gap: 40px;
+}
+
+@media (max-width: 900px) {
+  .dropdown-wrapper {
+    flex-direction: column;
+    gap: 20px;
+    width: 100%;
+    align-items: center;
+  }
 }
 
 .login-btn,
@@ -335,16 +355,38 @@ p {
   border: none;
   cursor: pointer;
   color: var(--gfm-green-deep);
+
+  /* Ensure the hamburger always receives clicks */
+  position: relative;
+  z-index: 1101;
+  pointer-events: auto;
 }
 
+
 @media (max-width: 900px) {
+
+  .logo-section {
+    position: static;
+    transform: none;
+    display: flex;
+    align-items: center;
+  }
+
+  .navbar-inner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 18px;
+  }
+
   .menu-toggle {
     display: block;
+    margin-left: auto;
   }
 
   .nav-links {
     position: absolute;
-    top: 100px;
+    top: 90px;
     left: 0;
     width: 100%;
     background-color: var(--gfm-green-light);
@@ -353,7 +395,9 @@ p {
     gap: 20px;
     padding: 20px 0;
     display: none;
+    z-index: 1050;
   }
+
 
   .nav-links.active {
     display: flex;
@@ -410,7 +454,11 @@ p {
   margin: auto;
   display: flex;
   justify-content: space-between;
+  align-items: flex-start;
   gap: 60px;
+
+  /* Swap left and right */
+  flex-direction: row-reverse;
 }
 
 .footer-about {

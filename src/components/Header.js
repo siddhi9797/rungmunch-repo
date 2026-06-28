@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import { useState, useEffect, useRef } from "react";
-import logo from "../assets/logo.png";
+import logo from "../assets/logo.jpg";
 
 function Header() {
 
@@ -174,9 +174,9 @@ const res = await fetch(
 
 {/* INITIATIVES */}
 
-  <div
+<div
   ref={dropdownRef}
-  style={{ display: "flex", gap: "40px" }}
+  className="dropdown-wrapper"
 >
   {/* EVENTS */}
   <div className="dropdown">

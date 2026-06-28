@@ -38,7 +38,7 @@ function Footer() {
     target="_blank"
     rel="noopener noreferrer"
   >
-    310 Grau Drive, Fremont, CA 94536, UNITED STATES
+    310 Grau Drive, Fremont, CA 94536, US.
   </a>
 </li>
 
@@ -55,7 +55,6 @@ function Footer() {
     contact@rungmunch.org
   </a>
 </li>
-
   </ul>
 </div>
       </div>
