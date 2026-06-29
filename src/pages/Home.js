@@ -88,7 +88,16 @@ function Home() {
 
       <h3>{event.title}</h3>
 
-      <span className="event-date">{event.date}</span>
+      <span className="event-date">
+  {new Date(event.date).toLocaleDateString("en-US", {
+    weekday: "long",
+    month: "long",
+    day: "numeric",
+    year: "numeric",
+  })}
+  {" • "}
+  {event.time}
+</span>
 
       <p className="event-venue">
         📍 {event.venue}

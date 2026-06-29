@@ -11,6 +11,7 @@ function AdminPage() {
 const [form, setForm] = useState({
   title: "",
   date: "",
+  time: "",
   venue: "",
   description: "",
   language: "English",
@@ -107,6 +108,7 @@ const [form, setForm] = useState({
 setForm({
   title: event.title,
   date: event.date,
+  time: event.time,
   venue: event.venue,
   description: event.description,
   language: event.language,
@@ -124,6 +126,7 @@ setForm({
 setForm({
   title: "",
   date: "",
+  time: "",
   venue: "",
   description: "",
   language: "English",
@@ -169,7 +172,15 @@ setForm({
 
               <h3>{event.title}</h3>
 
-              <p className="event-date">{event.date}</p>
+             <p className="event-date">
+  {new Date(event.date).toLocaleDateString("en-US", {
+    weekday: "long",
+    month: "long",
+    day: "numeric",
+    year: "numeric",
+  })}{" "}
+  • {event.time}
+</p>
 
               <p className="event-venue">📍 {event.venue}</p>
 
@@ -219,6 +230,14 @@ setForm({
   value={form.date}
   onChange={handleChange}
 />
+
+<input
+  type="time"
+  name="time"
+  value={form.time}
+  onChange={handleChange}
+/>
+
 <input
   type="text"
   name="venue"

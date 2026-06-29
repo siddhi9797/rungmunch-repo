@@ -28,9 +28,10 @@ const upload = multer({ storage });
 // ================= CREATE EVENT =================
 router.post("/create", upload.single("image"), async (req, res) => {
   try {
-    const {
+   const {
   title,
   date,
+  time,
   venue,
   description,
   language,
@@ -44,6 +45,7 @@ router.post("/create", upload.single("image"), async (req, res) => {
 const newEvent = new Event({
   title,
   date,
+  time,
   venue,
   description,
   language,
@@ -109,6 +111,7 @@ router.put("/:id", upload.single("image"), async (req, res) => {
    const {
   title,
   date,
+  time,
   venue,
   description,
   language,
@@ -129,12 +132,13 @@ router.put("/:id", upload.single("image"), async (req, res) => {
     }
 
     // ✅ Update fields
-    event.title = title;
-    event.date = date;
-    event.venue = venue;
-    event.description = description;
-    event.language = language;
-    event.type = type;
+event.title = title;
+event.date = date;
+event.time = time;
+event.venue = venue;
+event.description = description;
+event.language = language;
+event.type = type;
 
     await event.save();
 
