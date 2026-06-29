@@ -105,18 +105,14 @@ function Home() {
 
       <p>{event.description}</p>
 
-     <button
-  className="know-more-btn"
-  onClick={() => {
-    navigate("/events/upcoming");
-    window.scrollTo({
-      top: 0,
-      behavior: "smooth",
-    });
-  }}
->
-  View All Events
-</button>
+      <button
+              className="know-more-btn"
+              onClick={() =>
+                navigate(`/events/${event._id}`)
+              }
+            >
+              View Details
+            </button>
     </div>
   ))}
 </div>
