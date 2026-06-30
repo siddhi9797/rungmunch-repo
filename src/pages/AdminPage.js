@@ -362,8 +362,9 @@ setShows([
 ))}
 
 <button
-  type="button"
-  onClick={addShow}
+type="button"
+className="add-show-btn"
+onClick={addShow}
 >
   + Add Show
 </button>
@@ -404,7 +405,10 @@ setShows([
                 onChange={(e) => setImage(e.target.files[0])}
               />
 
-              <button type="submit">
+            <button
+type="submit"
+className="submit-btn"
+>
                 {editId ? "Update Event" : "Add Event"}
               </button>
 
