@@ -18,9 +18,6 @@
  font-family: var(--font-body);
 }
 
-.events-header {
-  text-align: center;
-}
 
 .events-header h1 {
    font-size: var(--page-title-size);
@@ -181,4 +178,27 @@
   .event-card h3 {
     font-size: 18px;
   }
+}
+
+
+.more-shows {
+  color: #6b2c91;
+  font-weight: 600;
+  cursor: pointer;
+  margin: 10px 0;
+  display: inline-block;
+}
+
+.more-shows:hover {
+  text-decoration: underline;
+}
+
+.extra-show {
+  border-top: 1px dashed #ddd;
+  margin-top: 10px;
+  padding-top: 10px;
+}
+
+.extra-show p {
+  margin: 5px 0;
 }

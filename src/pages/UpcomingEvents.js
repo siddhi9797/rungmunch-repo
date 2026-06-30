@@ -6,6 +6,7 @@ import { useNavigate } from "react-router-dom";
 function UpcomingEvents() {
   const [selectedLang, setSelectedLang] = useState("All");
   const [events, setEvents] = useState([]);
+  const [expanded, setExpanded] = useState({});
 
   const navigate = useNavigate();
 
@@ -17,9 +18,9 @@ useEffect(() => {
       const today = new Date();
       today.setHours(0, 0, 0, 0);
 
-      const upcoming = res.data.filter(
-        (event) => new Date(event.date) >= today
-      );
+    const upcoming = res.data.filter((event) =>
+  event.shows.some((show) => new Date(show.date) >= today)
+);
 
       setEvents(upcoming);
     })
@@ -57,20 +58,58 @@ useEffect(() => {
 
             <h3>{event.title}</h3>
 
-            <span className="event-date">
-  {new Date(event.date).toLocaleDateString("en-US", {
+<span className="event-date">
+  {new Date(event.shows[0].date).toLocaleDateString("en-US", {
     weekday: "long",
     month: "long",
     day: "numeric",
     year: "numeric",
   })}
   {" • "}
-  {event.time}
+  {event.shows[0].time}
 </span>
+
 <p className="event-venue">
-  📍 {event.venue}
+  📍 {event.shows[0].venue}
 </p>
             <p>{event.description}</p>
+
+            
+          {event.shows.length > 1 && (
+  <>
+    <p
+      className="more-shows"
+      onClick={() =>
+        setExpanded({
+          ...expanded,
+          [event._id]: !expanded[event._id],
+        })
+      }
+    >
+      {expanded[event._id]
+        ? "Show Less"
+        : `More Shows (${event.shows.length - 1})`}
+    </p>
+
+    {expanded[event._id] &&
+      event.shows.slice(1).map((show, index) => (
+        <div key={index} className="extra-show">
+          <p>
+            {new Date(show.date).toLocaleDateString("en-US", {
+              weekday: "long",
+              month: "long",
+              day: "numeric",
+              year: "numeric",
+            })}
+            {" • "}
+            {show.time}
+          </p>
+
+          <p>📍 {show.venue}</p>
+        </div>
+      ))}
+  </>
+)}
 
             <button
               className="know-more-btn"
