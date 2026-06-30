@@ -7,6 +7,7 @@ function AdminPage() {
   const [events, setEvents] = useState([]);
 
   const [editId, setEditId] = useState(null);
+  const [expanded, setExpanded] = useState({});
 
 const [form, setForm] = useState({
   title: "",
@@ -210,49 +211,91 @@ setShows([
 
           {events.map((event) => (
 
-            <div className="admin-event-card" key={event._id}>
+<div className="event-card admin-event-card" key={event._id}>
+  <img src={event.image} alt={event.title} />
 
-              <img src={event.image} alt="" />
+  <h3>{event.title}</h3>
 
-              <h3>{event.title}</h3>
+  <span className="event-date">
+    {event.shows?.length > 0 ? (
+      <>
+        {new Date(event.shows[0].date).toLocaleDateString("en-US", {
+          weekday: "long",
+          month: "long",
+          day: "numeric",
+          year: "numeric",
+        })}
+        {" • "}
+        {event.shows[0].time}
+      </>
+    ) : (
+      <>
+        {new Date(event.date).toLocaleDateString("en-US", {
+          weekday: "long",
+          month: "long",
+          day: "numeric",
+          year: "numeric",
+        })}
+        {" • "}
+        {event.time}
+      </>
+    )}
+  </span>
 
-             <p className="event-date">
-  {event.shows?.length > 0
-    ? `${new Date(event.shows[0].date).toLocaleDateString("en-US", {
-        weekday: "long",
-        month: "long",
-        day: "numeric",
-        year: "numeric",
-      })} • ${event.shows[0].time}`
-    : event.date &&
-      `${new Date(event.date).toLocaleDateString("en-US", {
-        weekday: "long",
-        month: "long",
-        day: "numeric",
-        year: "numeric",
-      })} • ${event.time}`}
+  <p className="event-venue">
+    📍 {event.shows?.length > 0
+      ? event.shows[0].venue
+      : event.venue}
+  </p>
+
+  <p>{event.description}</p>
+
+  {event.shows?.length > 1 && (
+    <>
+<p
+  className="more-shows"
+  onClick={() =>
+    setExpanded({
+      ...expanded,
+      [event._id]: !expanded[event._id],
+    })
+  }
+>
+  {expanded[event._id]
+    ? "Show Less"
+    : `More Shows (${event.shows.length - 1})`}
 </p>
 
-<p className="event-venue">
-  📍 {event.shows?.length > 0 ? event.shows[0].venue : event.venue}
-</p>
+{expanded[event._id] &&
+  event.shows.slice(1).map((show, index) => (
+    <div key={index} className="extra-show">
+      <p>
+        {new Date(show.date).toLocaleDateString("en-US", {
+          weekday: "long",
+          month: "long",
+          day: "numeric",
+          year: "numeric",
+        })}
+        {" • "}
+        {show.time}
+      </p>
 
-              <p className="event-venue">📍 {event.venue}</p>
+      <p>📍 {show.venue}</p>
+    </div>
+  ))}
+    </>
+  )}
 
-              <p className="event-desc">{event.description}</p>
+  <div className="admin-actions">
+    <button onClick={() => handleEdit(event)}>
+      Edit
+    </button>
 
-              <div className="admin-actions">
-
-                <button onClick={() => handleEdit(event)}>
-                  Edit
-                </button>
-
-                <button onClick={() => handleDelete(event._id)}>
-                  Delete
-                </button>
-
-              </div>
-            </div>
+    <button onClick={() => handleDelete(event._id)}>
+      Delete
+    </button>
+  </div>
+</div>
           ))}
         </div>
       </div>
